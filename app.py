@@ -13,3 +13,7 @@ def johnnyA3(name):
 @app.route("/Ana/<name>")
 def AnaA3(name):
     return f'This is my part for A3 {name}'
+
+@app.route("/Andy/<name>")
+def AndyA3(name):
+    return f'My part for A3 {name}'

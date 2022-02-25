@@ -17,3 +17,8 @@ def AnaA3(name):
 @app.route("/Andy/<name>")
 def AndyA3(name):
     return f'My part for A3 {name}'
+
+@app.route("/Alex/<name>")
+def AlexA3(name):
+    return f'hello {name}, welcome to our page'
+    

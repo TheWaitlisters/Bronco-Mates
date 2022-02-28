@@ -1,0 +1,35 @@
+Collecting mockito
+  Downloading mockito-1.3.0-py3-none-any.whl (29 kB)
+Installing collected packages: mockito
+Successfully installed mockito-1.3.0
+Collecting flask
+  Using cached Flask-2.0.3-py3-none-any.whl (95 kB)
+Collecting pymongo
+  Downloading pymongo-4.0.1-cp310-cp310-win_amd64.whl (354 kB)
+     -------------------------------------- 354.8/354.8 KB 7.3 MB/s eta 0:00:00
+Collecting Jinja2>=3.0
+  Using cached Jinja2-3.0.3-py3-none-any.whl (133 kB)
+Collecting itsdangerous>=2.0
+  Using cached itsdangerous-2.1.0-py3-none-any.whl (15 kB)
+Collecting Werkzeug>=2.0
+  Using cached Werkzeug-2.0.3-py3-none-any.whl (289 kB)
+Collecting click>=7.1.2
+  Using cached click-8.0.4-py3-none-any.whl (97 kB)
+Collecting colorama
+  Using cached colorama-0.4.4-py2.py3-none-any.whl (16 kB)
+Collecting MarkupSafe>=2.0
+  Using cached MarkupSafe-2.1.0-cp310-cp310-win_amd64.whl (16 kB)
+Installing collected packages: Werkzeug, pymongo, MarkupSafe, itsdangerous, colorama, Jinja2, click, flask
+Successfully installed Jinja2-3.0.3 MarkupSafe-2.1.0 Werkzeug-2.0.3 click-8.0.4 colorama-0.4.4 flask-2.0.3 itsdangerous-2.1.0 pymongo-4.0.1
+Collecting Flask-PyMongo
+  Downloading Flask_PyMongo-2.3.0-py2.py3-none-any.whl (12 kB)
+Requirement already satisfied: PyMongo>=3.3 in c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages (from Flask-PyMongo) (4.0.1)
+Requirement already satisfied: Flask>=0.11 in c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages (from Flask-PyMongo) (2.0.3)
+Requirement already satisfied: Werkzeug>=2.0 in c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages (from Flask>=0.11->Flask-PyMongo) (2.0.3)
+Requirement already satisfied: Jinja2>=3.0 in c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages (from Flask>=0.11->Flask-PyMongo) (3.0.3)
+Requirement already satisfied: click>=7.1.2 in c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages (from Flask>=0.11->Flask-PyMongo) (8.0.4)
+Requirement already satisfied: itsdangerous>=2.0 in c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages (from Flask>=0.11->Flask-PyMongo) (2.1.0)
+Requirement already satisfied: colorama in c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages (from click>=7.1.2->Flask>=0.11->Flask-PyMongo) (0.4.4)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages (from Jinja2>=3.0->Flask>=0.11->Flask-PyMongo) (2.1.0)
+Installing collected packages: Flask-PyMongo
+Successfully installed Flask-PyMongo-2.3.0

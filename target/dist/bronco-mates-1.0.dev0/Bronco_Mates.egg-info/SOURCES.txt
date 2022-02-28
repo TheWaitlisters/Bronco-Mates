@@ -1,0 +1,8 @@
+setup.py
+Bronco_Mates.egg-info/PKG-INFO
+Bronco_Mates.egg-info/SOURCES.txt
+Bronco_Mates.egg-info/dependency_links.txt
+Bronco_Mates.egg-info/namespace_packages.txt
+Bronco_Mates.egg-info/top_level.txt
+Bronco_Mates.egg-info/zip-safe
+frontend/app.py

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app_tests.HelloWorldTest-20220225191024" tests="1" file="app_tests.py" time="0.001" timestamp="2022-02-25T19:10:24" failures="0" errors="0" skipped="0">
+	<testcase classname="app_tests.HelloWorldTest" name="test_should_issue_hello_world_message" time="0.001" timestamp="2022-02-25T19:10:24"/>
+</testsuite>

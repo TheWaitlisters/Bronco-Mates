@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from sys import path
-path.append("src/main/python")
+path.append("src/main")
 
-from frontend.app import app
+from python.app import app
 app.run(debug=True)

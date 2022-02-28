@@ -10,7 +10,6 @@ writing dependency_links to Bronco_Mates.egg-info\dependency_links.txt
 writing namespace_packages to Bronco_Mates.egg-info\namespace_packages.txt
 writing top-level names to Bronco_Mates.egg-info\top_level.txt
 writing manifest file 'Bronco_Mates.egg-info\SOURCES.txt'
-package init file 'frontend\__init__.py' not found (or not a regular file)
 reading manifest file 'Bronco_Mates.egg-info\SOURCES.txt'
 writing manifest file 'Bronco_Mates.egg-info\SOURCES.txt'
 warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
@@ -22,8 +21,8 @@ warning: Check: missing meta-data: either (author and author_email) or (maintain
 
 creating Bronco-Mates-1.0.dev0
 creating Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
-creating Bronco-Mates-1.0.dev0\frontend
 copying files to Bronco-Mates-1.0.dev0...
+copying app.py -> Bronco-Mates-1.0.dev0
 copying setup.py -> Bronco-Mates-1.0.dev0
 copying Bronco_Mates.egg-info\PKG-INFO -> Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
 copying Bronco_Mates.egg-info\SOURCES.txt -> Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
@@ -31,7 +30,6 @@ copying Bronco_Mates.egg-info\dependency_links.txt -> Bronco-Mates-1.0.dev0\Bron
 copying Bronco_Mates.egg-info\namespace_packages.txt -> Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
 copying Bronco_Mates.egg-info\top_level.txt -> Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
 copying Bronco_Mates.egg-info\zip-safe -> Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
-copying frontend\app.py -> Bronco-Mates-1.0.dev0\frontend
 Writing Bronco-Mates-1.0.dev0\setup.cfg
 creating dist
 Creating tar archive

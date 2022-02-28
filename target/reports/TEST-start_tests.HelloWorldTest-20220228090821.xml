@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="start_tests.HelloWorldTest-20220228090821" tests="1" file="start_tests.py" time="0.014" timestamp="2022-02-28T09:08:22" failures="1" errors="0" skipped="0">
+	<testcase classname="start_tests.HelloWorldTest" name="test_should_issue_hello_world_message" time="0.014" timestamp="2022-02-28T09:08:22">
+		<failure type="VerificationError" message="
+Wanted but not invoked:
+
+    write('Successfully starting')
+
+Instead got:
+
+    write('Successfully starting up')
+
+"><![CDATA[Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.752.0_x64__qbz5n2kfra8p0\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.752.0_x64__qbz5n2kfra8p0\lib\unittest\case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.752.0_x64__qbz5n2kfra8p0\lib\unittest\case.py", line 549, in _callTestMethod
+    method()
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\src\unittest\python\start_tests.py", line 12, in test_should_issue_hello_world_message
+    verify(out).write("Successfully starting")
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages\mockito\invocation.py", line 242, in __call__
+    self.verification.verify(self, len(matched_invocations))
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages\mockito\verification.py", line 94, in verify
+    raise VerificationError(
+mockito.verification.VerificationError: 
+Wanted but not invoked:
+
+    write('Successfully starting')
+
+Instead got:
+
+    write('Successfully starting up')
+
+
+]]></failure>
+	</testcase>
+</testsuite>

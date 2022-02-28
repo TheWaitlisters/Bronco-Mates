@@ -1,4 +1,5 @@
 import datetime
+import sys
 from flask import Flask, render_template
 from flask_pymongo import PyMongo
 
@@ -35,6 +36,9 @@ def AndyA3(name):
 @app.route("/Alex/<name>")
 def AlexA3(name):
     return f'hello {name}, welcome to our page'
-    
+
+def start(out):
+        out.write("Successfully starting up")
+
 if __name__ == "__main__":
     app.run(debug=True)

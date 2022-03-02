@@ -17,5 +17,5 @@ default_task = "publish"
 def set_properties(project):
     project.build_depends_on("mockito")
     project.build_depends_on("flask")
-    project.build_depends_on("Pillow")
+    project.build_depends_on("matplotlib")
     project.build_depends_on("Flask-PyMongo")

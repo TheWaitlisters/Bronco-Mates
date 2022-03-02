@@ -7,7 +7,7 @@ Using the command line, first go into the virtual environment (http://pypi.pytho
 
 If windows cmd
 ```cmd
-venv/Scripts/activate
+venv\Scripts\activate
 ```
 
 If bash

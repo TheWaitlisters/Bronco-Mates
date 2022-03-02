@@ -1,7 +1,7 @@
 import datetime
 import sys
 from flask import Flask, render_template
-from flask_pymongo import PyMongo
+from flask_pymongo import pymongo
 from matplotlib.pyplot import plt
 
 app = Flask(__name__)
@@ -34,6 +34,17 @@ def ana(name):
     plt.plot(x,y)
     return render_template('ana.html', plt.show())
 
+@app.route("/insertdocument")
+def insertdocument():
+    client = MongoClient()
+    db = client.bronco_mates
+    collection = db.students
+    record = {"student" : "Andy Munoz",
+              "major" : "Computer Science"}
+    post_id = collection.insert_one(record).inserted_id
+    return render_template('insertdocument.html', print(post_id))
+    
+    
 
 @app.route("/Andy/<name>")
 def AndyA3(name):

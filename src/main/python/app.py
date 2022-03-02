@@ -2,6 +2,7 @@ import datetime
 import sys
 from flask import Flask, render_template
 from flask_pymongo import PyMongo
+from matplotlib.pyplot import plt
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:5000/myDatabase"
@@ -25,9 +26,14 @@ def goodbye():
 
     return render_template('goodbye.html', goodbyeMsg = goodbyeMsg)
 
-@app.route("/Ana/<name>")
-def AnaA3(name):
-    return f'This is my part for A3 {name}'
+@app.route("/ana")
+def ana(name):
+    x = [1, 2, 3, 4, 5]
+    y = [1, 4, 5, 6, 6]
+
+    plt.plot(x,y)
+    return render_template('ana.html', plt.show())
+
 
 @app.route("/Andy/<name>")
 def AndyA3(name):

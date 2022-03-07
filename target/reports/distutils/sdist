@@ -1,4 +1,5 @@
 running clean
+'build\temp.win-amd64-3.10' does not exist -- can't clean it
 'build\lib' does not exist -- can't clean it
 'build\bdist.win-amd64' does not exist -- can't clean it
 'build\scripts-3.10' does not exist -- can't clean it
@@ -30,6 +31,11 @@ copying Bronco_Mates.egg-info\dependency_links.txt -> Bronco-Mates-1.0.dev0\Bron
 copying Bronco_Mates.egg-info\namespace_packages.txt -> Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
 copying Bronco_Mates.egg-info\top_level.txt -> Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
 copying Bronco_Mates.egg-info\zip-safe -> Bronco-Mates-1.0.dev0\Bronco_Mates.egg-info
+not copying Bronco_Mates.egg-info\SOURCES.txt (output up-to-date)
+Reading configuration from Bronco-Mates-1.0.dev0\setup.cfg
+Adding new section [egg_info] to Bronco-Mates-1.0.dev0\setup.cfg
+Setting egg_info.tag_build to '' in Bronco-Mates-1.0.dev0\setup.cfg
+Setting egg_info.tag_date to 0 in Bronco-Mates-1.0.dev0\setup.cfg
 Writing Bronco-Mates-1.0.dev0\setup.cfg
 creating dist
 Creating tar archive

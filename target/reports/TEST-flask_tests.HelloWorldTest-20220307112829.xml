@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flask_tests.HelloWorldTest-20220307112829" tests="1" file="flask_tests.py" time="0.015" timestamp="2022-03-07T11:28:30" failures="1" errors="0" skipped="0">
+	<testcase classname="flask_tests.HelloWorldTest" name="test_should_issue_hello_world_message" time="0.015" timestamp="2022-03-07T11:28:30">
+		<failure type="VerificationError" message="
+Wanted but not invoked:
+
+    write('Successfully starting up!')
+
+Instead got:
+
+    write('Successfully starting up')
+
+"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 549, in _callTestMethod
+    method()
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\src\unittest\python\flask_tests.py", line 12, in test_should_issue_hello_world_message
+    verify(out).write("Successfully starting up!")
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages\mockito\invocation.py", line 242, in __call__
+    self.verification.verify(self, len(matched_invocations))
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\target\venv\build\cpython-3.10.2.final.0\lib\site-packages\mockito\verification.py", line 94, in verify
+    raise VerificationError(
+mockito.verification.VerificationError: 
+Wanted but not invoked:
+
+    write('Successfully starting up!')
+
+Instead got:
+
+    write('Successfully starting up')
+
+
+]]></failure>
+	</testcase>
+</testsuite>

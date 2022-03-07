@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flask_tests.TestWebApp-20220307115806" tests="2" file="flask_tests.py" time="0.003" timestamp="2022-03-07T11:58:07" failures="0" errors="0" skipped="0">
+	<testcase classname="flask_tests.TestWebApp" name="test_app" time="0.002" timestamp="2022-03-07T11:58:07"/>
+	<testcase classname="flask_tests.TestWebApp" name="test_hello" time="0.001" timestamp="2022-03-07T11:58:07"/>
+</testsuite>

@@ -1,30 +1,67 @@
 import datetime
 import sys
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for, flash, redirect
 from flask_pymongo import pymongo
-from matplotlib.pyplot import plt
+from matplotlib import pyplot as plt
 
-app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:5000/myDatabase"
-mongo = PyMongo(app)
+def createApp():
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = "0b5b1309c9ab64665514a3fd8b28ca95686360ca302d111e"
+    app.config["MONGO_URI"] = "mongodb://localhost:5000/myDatabase"
+
+    return app
+
+app = createApp()
+
+messages = [{"username" : 'username1',
+             "email" : "email1" }]   
+
+# @app.route("/", methods=["GET", "POST"])
+# def home():
+
+#     if request.method == "POST":
+#         content = request.form["content"]
+#         return "POST method called"
+
+#     return "GET method called"
 
 @app.route("/")
-def home_page():
+def homePage():
     return render_template('index.html', utc_dt=datetime.datetime.utcnow())
 
 @app.route("/hello")
 def hello():
     return render_template('hello.html')
 
-@app.route("/goodbye")
-def goodbye():
-    goodbyeMsg = ["Sad to see you go!",
-                  "But at least you were here for the show.",
-                  "Enjoy these fancy boxes!",
-                  "I promise there's no foxes."
-                 ]
+@app.route("/databasetest")
+def databaseTesting():
+    return render_template('database_test.html', content = messages)
 
-    return render_template('goodbye.html', goodbyeMsg = goodbyeMsg)
+@app.route("/accountsettings", methods =["GET", "POST"])
+def accountSettings():
+    if request.method == "POST":
+        username = request.form["username"]
+        email = request.form["email"]
+        phoneNumber = request.form["phoneNumber"]
+        standing = request.form["standing"]
+        major = request.form["major"]
+        minor = request.form["minor"]
+        addInfo = request.form["addInfo"]
+
+        if not username:
+            flash("Username is required!")
+        elif not email:
+            flash("Email is required!")
+        else:
+            messages.append({"username" : username, "email" : email, "phoneNumber" : phoneNumber,
+                             "standing" : standing, "major" : major, "minor" : minor, "addInfo" : addInfo})
+            return redirect(url_for("homePage"))
+
+    return render_template("account_settings.html")
+
+@app.route("/createlisting", methods =("GET", "POST"))
+def createListing():
+    return render_template("listing_description.html")
 
 @app.route("/ana")
 def ana(name):
@@ -43,19 +80,6 @@ def insertdocument():
               "major" : "Computer Science"}
     post_id = collection.insert_one(record).inserted_id
     return render_template('insertdocument.html', print(post_id))
-    
-    
-
-@app.route("/Andy/<name>")
-def AndyA3(name):
-    return f'My part for A3 {name}'
-
-@app.route("/Alex/<name>")
-def AlexA3(name):
-    return f'hello {name}, welcome to our page' #commit test
-
-def start(out):
-        out.write("Successfully starting up")
 
 if __name__ == "__main__":
     app.run(debug=True)

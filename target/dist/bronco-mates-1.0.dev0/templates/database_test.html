@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Comments {% endblock %}</h1>
+    <div style="width: 50%; margin: auto">
+        {% for content in content %}
+            {% if loop.index % 2 == 0 %}
+                {% set bg_color = '#e6f9ff' %}
+            {% else %}
+                {% set bg_color = '#eee' %}
+            {% endif %}
+
+            <div style="padding: 20px; background-color: {{ bg_color }}; margin: 20px">
+                <p>#{{ loop.index }}</p>
+                <p>Username: {{ content["username"] }}</p>
+                <p>Email: {{ content["email"] }}</p>
+                <p>Phone Number: {{ content["phoneNumber"] }}</p>
+                <p>Standing: {{ content["standing"] }}</p>
+                <p>Major: {{ content["major"] }}</p>
+                <p>Minor: {{ content["minor"] }}</p>
+                <p>Additional Information: {{ content["addInfo"] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

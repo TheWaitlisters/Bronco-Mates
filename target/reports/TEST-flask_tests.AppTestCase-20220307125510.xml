@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flask_tests.AppTestCase-20220307125510" tests="2" file="flask_tests.py" time="0.006" timestamp="2022-03-07T12:55:11" failures="1" errors="0" skipped="0">
+	<testcase classname="flask_tests.AppTestCase" name="test" time="0.002" timestamp="2022-03-07T12:55:11"/>
+	<testcase classname="flask_tests.AppTestCase" name="test_home" time="0.004" timestamp="2022-03-07T12:55:11">
+		<failure type="AssertionError" message=""><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 549, in _callTestMethod
+    method()
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\src\unittest\python\flask_tests.py", line 33, in test_home
+    assert size == len(messages) - 1
+AssertionError
+]]></failure>
+	</testcase>
+</testsuite>

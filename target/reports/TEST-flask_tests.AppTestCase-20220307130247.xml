@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flask_tests.AppTestCase-20220307130247" tests="4" file="flask_tests.py" time="0.013" timestamp="2022-03-07T13:02:48" failures="0" errors="0" skipped="0">
+	<testcase classname="flask_tests.AppTestCase" name="test_account_settings_full_data" time="0.004" timestamp="2022-03-07T13:02:48"/>
+	<testcase classname="flask_tests.AppTestCase" name="test_account_settings_missing_email" time="0.001" timestamp="2022-03-07T13:02:48"/>
+	<testcase classname="flask_tests.AppTestCase" name="test_account_settings_missing_user" time="0.001" timestamp="2022-03-07T13:02:48"/>
+	<testcase classname="flask_tests.AppTestCase" name="test_check_urls" time="0.007" timestamp="2022-03-07T13:02:48"/>
+</testsuite>

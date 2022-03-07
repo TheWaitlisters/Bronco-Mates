@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flask_tests.TestWebApp-20220307115721" tests="2" file="flask_tests.py" time="0.004" timestamp="2022-03-07T11:57:22" failures="0" errors="1" skipped="0">
+	<testcase classname="flask_tests.TestWebApp" name="test_app" time="0.002" timestamp="2022-03-07T11:57:22"/>
+	<testcase classname="flask_tests.TestWebApp" name="test_hello" time="0.002" timestamp="2022-03-07T11:57:22">
+		<error type="TypeError" message="start() missing 1 required positional argument: 'out'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 549, in _callTestMethod
+    method()
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\src\unittest\python\flask_tests.py", line 21, in test_hello
+    test = start()
+TypeError: start() missing 1 required positional argument: 'out'
+]]></error>
+	</testcase>
+</testsuite>

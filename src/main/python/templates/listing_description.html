@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Create a Listing {% endblock %}</h1>
+    <form method="post">
+       <label for="address">Address</label>
+        <br>
+        <input type="text" name="address"
+               placeholder="Address"
+               value="{{ request.form['address'] }}"></input>
+        <br>
+
+       <label for="city">Apartment</label>
+        <br>
+        <input type="text" name="apt"
+               placeholder="Apartment, suite, etc. (optional)"
+               value="{{ request.form['apt'] }}"></input>
+        <br>
+        
+        <label for="city">City</label>
+        <br>
+        <input type="text" name="city"
+               placeholder="City"
+               value="{{ request.form['city'] }}"></input>
+        <br>
+
+        <label for="zip">ZIP Code</label>
+        <br>
+        <input type="text" name="zip"
+               placeholder="ZIP code"
+               value="{{ request.form['zip'] }}"></input>
+        <br>
+
+        <label for="addInfo">Additional Information</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Additional information you want others to know!"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flask_tests.TestWebApp-20220307115659" tests="2" file="flask_tests.py" time="0.004" timestamp="2022-03-07T11:57:00" failures="0" errors="2" skipped="0">
+	<testcase classname="flask_tests.TestWebApp" name="test_app" time="0.002" timestamp="2022-03-07T11:57:00">
+		<error type="NameError" message="name 'create_app' is not defined"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 587, in run
+    self._callSetUp()
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 546, in _callSetUp
+    self.setUp()
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\src\unittest\python\flask_tests.py", line 7, in setUp
+    self.app = create_app()
+NameError: name 'create_app' is not defined
+]]></error>
+	</testcase>
+	<testcase classname="flask_tests.TestWebApp" name="test_hello" time="0.002" timestamp="2022-03-07T11:57:00">
+		<error type="NameError" message="name 'create_app' is not defined"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 587, in run
+    self._callSetUp()
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 546, in _callSetUp
+    self.setUp()
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\src\unittest\python\flask_tests.py", line 7, in setUp
+    self.app = create_app()
+NameError: name 'create_app' is not defined
+]]></error>
+	</testcase>
+</testsuite>

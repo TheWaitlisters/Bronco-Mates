@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flask_tests.HelloWorldTest-20220307122324" tests="1" file="flask_tests.py" time="0.002" timestamp="2022-03-07T12:23:26" failures="1" errors="0" skipped="0">
+	<testcase classname="flask_tests.HelloWorldTest" name="test" time="0.002" timestamp="2022-03-07T12:23:26">
+		<failure type="AssertionError" message=""><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "C:\Users\Johnny\AppData\Local\Programs\Python\Python310\lib\unittest\case.py", line 549, in _callTestMethod
+    method()
+  File "c:\users\johnny\desktop\everything\school\cs 4800 software engineering\bronco-mates\src\unittest\python\flask_tests.py", line 9, in test
+    assert res == "Successfully starting up!"
+AssertionError
+]]></failure>
+	</testcase>
+</testsuite>

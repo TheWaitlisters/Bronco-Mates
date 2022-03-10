@@ -9,6 +9,7 @@ HELLO = "/hello"
 DATABASE_TEST = "/databasetest"
 ACCOUNT_SETTINGS = "/accountsettings"
 CREATE_LISTING = "/createlisting"
+FAVORITES = "/favroties"
 
 class AppTestCase(unittest.TestCase):
     def setUp(self):
@@ -61,6 +62,19 @@ class AppTestCase(unittest.TestCase):
         # 400 = bad request
         assert response.status_code == 400
     
+    def test_account_settings_missing_phone_number(self):
+        response = self.client.post(ACCOUNT_SETTINGS, 
+            data = { "phoneNumber" : "phoneNumber1" })
+        # 400 = bad request
+        assert response.status_code == 400
+
+    def test_account_settings_missing_additional_info(self):
+        response = self.client.post(ACCOUNT_SETTINGS, 
+            data = { "addInfo" : "addInfo1" })
+        # 400 = bad request
+        assert response.status_code == 400
+
+
     def test_check_urls(self):
         response = self.client.get(HOME_PAGE)
         assert response.status_code == 200
@@ -69,5 +83,7 @@ class AppTestCase(unittest.TestCase):
         response = self.client.get(DATABASE_TEST)
         assert response.status_code == 200
         response = self.client.get(CREATE_LISTING)
+        assert response.status_code == 200
+        response = self.client.get(FAVORITES)
         assert response.status_code == 200
 

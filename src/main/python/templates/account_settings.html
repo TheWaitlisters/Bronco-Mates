@@ -2,30 +2,83 @@
 
 {% block content %}
     <h1>{% block title %} Account Settings {% endblock %}</h1>
+    <p>Please Note: Anything you put here will be public</p>
+    <p>Besides your username and password</p>
+    <hr>
     <form method="post">
-        <label for="Username">Username</label>
+
+       <!-- USERNAME IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
+        <label for="username">Username</label>
         <br>
         <input type="text" name="username"
                placeholder="Username"
                value="{{ request.form['username'] }}"></input>
         <br>
 
-        <label for="email">Email</label>
+       <!-- PASSWORD IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
+        <label for="password">Password</label>
         <br>
-        <input type="text" name="email"
-               placeholder="Email"
-               value="{{ request.form['email'] }}"></input>
+        <input type="text" name="password"
+               placeholder="Password"
+               value="{{ request.form['password'] }}"></input>
         <br>
-        
+        <hr>
+
+
+        <div id="name">
+              <div style="margin-right:20px; float:left">
+                     <label for="firstName">First Name</label>
+                     <br>
+                            <input type="text" name="firstName"
+                            placeholder="First Name"
+                            value="{{ request.form['firstName'] }}"></input>
+                     <br>
+              </div>
+              <div>
+                     <label for="lastName">Last Name</label>
+                     <br>
+                            <input type="text" name="lastName"
+                            placeholder="Last Name"
+                            value="{{ request.form['lastName'] }}"></input>
+                     <br>
+              </div>
+        </div>
+
         <label for="phoneNumber">Phone Number</label>
         <br>
-        <input type="text" name="phoneNumber"
-               placeholder="Phone Number"
+        <input type="tel" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+               placeholder="123-456-7890"
                value="{{ request.form['phoneNumber'] }}"></input>
         <br>
 
-        <label for="Standing">College Standing</label>
+
+        <label for="email">Email</label>
         <br>
+        <input type="email" name="email"
+               placeholder="Email"
+               value="{{ request.form['email'] }}"></input>
+        <br>
+
+        <!-- CHECK INPUT TO ENSURE IT IS AN INT -->
+        <label for="age">Age</label>
+        <br>
+        <input type="number" name="age"
+               placeholder="Age"
+               value="{{ request.form['age'] }}"></input>
+        <br>
+
+        <!-- DROP DOWN BOX FOR GENDER --> 
+        <label for="gender">Gender</label>
+        <br>
+        <input type="text" name="gender"
+               placeholder="Gender"
+               value="{{ request.form['gender'] }}"></input>
+        <br>
+
+        <label for="standing">College Standing</label>
+        <br>
+              <input type="radio" id="default" name="standing" checked value="Prefer not to disclose">
+              <label for="default">Prefer not to disclose</label><br>
               <input type="radio" id="freshman" name="standing" value="Freshman">
               <label for="freshman">Freshman</label><br>
               <input type="radio" id="sophomore" name="standing" value="Sophomore">
@@ -38,27 +91,123 @@
               <label for="other">Other</label>
         <br>
 
-        <label for="major">Major</label>
+        <div id="major/minor">
+              <div style="margin-right:20px; float:left">
+                     <label for="major">Major</label>
+                     <br>
+                     <input type="text" name="major"
+                            placeholder="Major"
+                            value="{{ request.form['major'] }}"></input>
+                     <br>
+              </div>
+              <div>
+                     <label for="minor">Minor</label>
+                     <br>
+                     <input type="text" name="minor"
+                            placeholder="Minor"
+                            value="{{ request.form['minor'] }}"></input>
+                     <br>
+              </div>
+        </div>
+
+       <!-- Note: When checked, returns true; when not checked, returns nothing-->
+        <label for="smoker">Smoker?</label>
         <br>
-        <input type="text" name="major"
-               placeholder="Major"
-               value="{{ request.form['major'] }}"></input>
+        <span style="margin-left:10px">Yes</span>
+        <input type="checkbox" name="smoker" value=true></input>
         <br>
 
-        <label for="minor">Minor</label>
+        <label for="pets"># of Pets</label>
         <br>
-        <input type="text" name="minor"
-               placeholder="Minor"
-               value="{{ request.form['minor'] }}"></input>
+        <input type="number" name="pets"
+              placeholder="# of pets"
+              value="{{ request.form['pets'] }}"></input>
         <br>
 
-        <label for="addInfo">Additional Information</label>
+        <label for="budget">Budget per month</label>
         <br>
-        <textarea name="addInfo"
-                  placeholder="Additional information you want others to know!"
-                  rows="15"
-                  cols="60"
-                  >{{ request.form['addInfo'] }}</textarea>
+        <input type="number" name="budget"
+              placeholder="Budget"
+              value="{{ request.form['budget'] }}"></input>
+        <br>
+
+        <label for="children"># of children</label>
+        <br>
+        <input type="number" name="children"
+              placeholder="# of children"
+              value="{{ request.form['children'] }}"></input>
+        <br>
+
+        <label for="occupation">Occupation</label>
+        <br>
+        <input type="text" name="ocupation"
+              placeholder="Ocupation"
+              value="{{ request.form['ocupation'] }}"></input>
+        <br>
+
+        <label for="schedule">Work Schedule</label>
+        <div id="workScheduleDays">
+                  <div style="margin-right:10px; float:left">     
+                        <label for="mSchedule" style="margin-bottom:4px">Monday</label> <br>
+                        <label for="tSchedule" style="margin-bottom:4px">Tuesday</label> <br>
+                        <label for="wSchedule" style="margin-bottom:4px">Wednesday</label> <br>
+                        <label for="thSchedule" style="margin-bottom:4px">Thursday</label> <br>
+                        <label for="fSchedule" style="margin-bottom:4px">Friday</label> <br> 
+                        <label for="satSchedule" style="margin-bottom:4px">Saturday</label> <br> 
+                        <label for="sunSchedule" style="margin-bottom:4px">Sunday</label>
+                  </div>
+                  <div>
+                        <input type="time" name="mSchedule1" value="{{ request.form['monday'] }}"></input>
+                        <span>to</span>
+                        <input type="time" name="mSchedule2" value="{{ request.form['monday2'] }}"></input>
+                        <br>
+
+                        <input type="time" name="tSchedule1" value="{{ request.form['tuesday1'] }}"></input>
+                        <span>to</span>
+                        <input type="time" name="tSchedule2" value="{{ request.form['tuesday2'] }}"></input>
+                        <br>
+
+                        <input type="time" name="wSchedule1" value="{{ request.form['wednesday1'] }}"></input>
+                        <span>to</span>
+                        <input type="time" name="wSchedule2" value="{{ request.form['wednesday2'] }}"></input>
+                        <br>
+
+                        <input type="time" name="thSchedule1" value="{{ request.form['thursday1'] }}"></input>
+                        <span>to</span>
+                        <input type="time" name="thSchedule2" value="{{ request.form['thursday2'] }}"></input>
+                        <br>
+
+                        <input type="time" name="fSchedule1" value="{{ request.form['friday1'] }}"></input>
+                        <span>to</span>
+                        <input type="time" name="fSchedule2" value="{{ request.form['friday2'] }}"></input>
+                        <br>
+
+                        <input type="time" name="satSchedule1" value="{{ request.form['saturday1'] }}"></input>
+                        <span>to</span>
+                        <input type="time" name="satSchedule2" value="{{ request.form['saturday2'] }}"></input>
+                        <br>
+
+                        <input type="time" name="sunSchedule1" value="{{ request.form['sunday1'] }}"></input>
+                        <span>to</span>
+                        <input type="time" name="sunSchedule2" value="{{ request.form['sunday2'] }}"></input>
+                        <br>
+                  </div>
+        </div>
+
+        <label for="moveDate">Move in Date</label>
+        <br>
+        <input type="date" name="moveDate"
+              placeholder="Move in Date"
+              value="{{ request.form['moveDate'] }}"></input>
+        <br> 
+
+        <label for="bio">Bio</label>
+        <br>
+        <textarea name="bio"
+              placeholder="Additional information you want others to know!"
+              rows="15"
+              cols="60"
+              >{{ request.form['bio'] }}</textarea>
         <br>
 
         <button type="submit">Submit</button>

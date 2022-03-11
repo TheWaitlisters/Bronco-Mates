@@ -41,20 +41,53 @@ def databaseTesting():
 def accountSettings():
     if request.method == "POST":
         username = request.form["username"]
-        email = request.form["email"]
+        password = request.form["password"]
         phoneNumber = request.form["phoneNumber"]
+        email = request.form["email"]
+        age = request.form["age"]
+        gender = request.form["gender"]
         standing = request.form["standing"]
         major = request.form["major"]
         minor = request.form["minor"]
-        addInfo = request.form["addInfo"]
+        smoker = request.form["smoker"]
+        pets = request.form["pets"]
+        budget = request.form["budget"]
+        children = request.form["children"]
+        ocupation = request.form["ocupation"]
+        workSchedule ={ "Monday" : (request.form["mSchedule1"], request.form["mSchedule2"]),
+                        "Tuesday" : (request.form["tSchedule1"], request.form["tSchedule2"]),
+                        "Wednesday" : (request.form["wSchedule1"], request.form["wSchedule2"]),
+                        "Thursday" : (request.form["thSchedule1"], request.form["thSchedule2"]),
+                        "Friday" : (request.form["fSchedule1"], request.form["fSchedule2"]),
+                        "Saturday" : (request.form["satSchedule1"], request.form["satSchedule2"]),
+                        "Sunday" : (request.form["sunSchedule1"], request.form["sunSchedule2"]) }
+        moveDate = request.form["moveDate"]
+        bio = request.form["bio"]
 
         if not username:
-            flash("Username is required!")
-        elif not email:
-            flash("Email is required!")
+            flash("Username required")
+        elif not password:
+            flash("Password required")
         else:
-            messages.append({"username" : username, "email" : email, "phoneNumber" : phoneNumber,
-                             "standing" : standing, "major" : major, "minor" : minor, "addInfo" : addInfo})
+            messages.append({
+                "username" : username,
+                "password" : password,
+                "phoneNumber" : phoneNumber,
+                "email" : email,
+                "age" : age,
+                "gender" : gender,
+                "standing" : standing,
+                "major" : major,
+                "minor" : minor,
+                "smoker" : smoker,
+                "pets" : pets,
+                "budget" : budget,
+                "children" : children,
+                "ocupation" : ocupation,
+                "workSchedule" : workSchedule,
+                "moveDate" : moveDate,
+                "bio" : bio
+            })
             return redirect(url_for("homePage"))
 
     return render_template("account_settings.html")

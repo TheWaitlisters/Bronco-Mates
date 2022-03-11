@@ -13,12 +13,25 @@
             <div style="padding: 20px; background-color: {{ bg_color }}; margin: 20px">
                 <p>#{{ loop.index }}</p>
                 <p>Username: {{ content["username"] }}</p>
-                <p>Email: {{ content["email"] }}</p>
+                <p>Password: {{ content["password"] }}</p>
                 <p>Phone Number: {{ content["phoneNumber"] }}</p>
+                <p>Email: {{ content["email"] }}</p>
+                <p>Age: {{ content["age"] }}</p>
+                <p>Gender: {{ content["gender"] }}</p>
                 <p>Standing: {{ content["standing"] }}</p>
                 <p>Major: {{ content["major"] }}</p>
                 <p>Minor: {{ content["minor"] }}</p>
-                <p>Additional Information: {{ content["addInfo"] }}</p>
+                <p>Smoker: {{ content["smoker"] }}</p>
+                <p># of Pets: {{ content["pets"] }}</p>
+                <p>Budget: {{ content["budget"] }}</p>
+                <p># of Children: {{ content["children"] }}</p>
+                <p>Ocupation: {{ content["ocupation"] }}</p>
+                <p>Work Schedule: {{ content["workSchedule"] }}</p>
+                <p>Move in Date: {{ content["moveDate"] }}</p>
+                <p>Bio: {{ content["bio"] }}</p>
+
+
+
             </div>
         {% endfor %}
     </div>

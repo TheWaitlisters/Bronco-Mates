@@ -82,13 +82,9 @@ def accountSettings():
 def createListing():
     return render_template("listing_description.html")
 
-@app.route("/ana")
-def ana(name):
-    x = [1, 2, 3, 4, 5]
-    y = [1, 4, 5, 6, 6]
-
-    plt.plot(x,y)
-    return render_template('ana.html', plt.show())
+@app.route("/favorites", methods =("GET", "POST"))
+def favorites():
+    return render_template("favorites.html")
 
 @app.route("/insertdocument")
 def insertdocument():

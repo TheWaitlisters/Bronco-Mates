@@ -9,6 +9,7 @@ HELLO = "/hello"
 DATABASE_TEST = "/databasetest"
 ACCOUNT_SETTINGS = "/accountsettings"
 CREATE_LISTING = "/createlisting"
+LOGIN = '/login'
 
 class AppTestCase(unittest.TestCase):
     def setUp(self):
@@ -71,3 +72,12 @@ class AppTestCase(unittest.TestCase):
         response = self.client.get(CREATE_LISTING)
         assert response.status_code == 200
 
+    '''
+        Test for getting username and password from login page
+    '''
+    def login_data_test(self):
+        response = self.client.get(LOGIN)
+        # 302 == login data successfully recieved
+        assert response.status_code == 302
+    
+    

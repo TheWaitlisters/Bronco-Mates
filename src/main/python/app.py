@@ -1,4 +1,5 @@
 import datetime
+import re
 import sys
 from flask import Flask, render_template, request, url_for, flash, redirect
 from flask_pymongo import pymongo
@@ -15,6 +16,8 @@ app = createApp()
 
 messages = [{"username" : 'username1',
              "email" : "email1" }]   
+
+loginInfo = [{'username' : 'testusername', 'password' : 'testpassword'}]
 
 # @app.route("/", methods=["GET", "POST"])
 # def home():
@@ -36,6 +39,22 @@ def hello():
 @app.route("/databasetest")
 def databaseTesting():
     return render_template('database_test.html', content = messages)
+
+@app.route('/login', methods =["GET", 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form["username"]
+        password = request.form['password']
+    
+        if not username: 
+            flash('Please enter a valid username')
+        elif not password:
+           flash('Please enter your password')
+        else:
+            loginInfo.append({"username" : username, 'password' : password})
+            return redirect(url_for('homePage'))
+    return render_template('login.html')
+    
 
 @app.route("/accountsettings", methods =["GET", "POST"])
 def accountSettings():
@@ -96,13 +115,9 @@ def accountSettings():
 def createListing():
     return render_template("listing_description.html")
 
-@app.route("/ana")
-def ana(name):
-    x = [1, 2, 3, 4, 5]
-    y = [1, 4, 5, 6, 6]
-
-    plt.plot(x,y)
-    return render_template('ana.html', plt.show())
+@app.route("/favorites", methods =("GET", "POST"))
+def favorites():
+    return render_template("favorites.html")
 
 @app.route("/insertdocument")
 def insertdocument():

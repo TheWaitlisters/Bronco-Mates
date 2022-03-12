@@ -19,15 +19,6 @@ messages = [{"username" : 'username1',
 
 loginInfo = [{'username' : 'testusername', 'password' : 'testpassword'}]
 
-# @app.route("/", methods=["GET", "POST"])
-# def home():
-
-#     if request.method == "POST":
-#         content = request.form["content"]
-#         return "POST method called"
-
-#     return "GET method called"
-
 @app.route("/")
 def homePage():
     return render_template('index.html', utc_dt=datetime.datetime.utcnow())
@@ -54,7 +45,6 @@ def login():
             loginInfo.append({"username" : username, 'password' : password})
             return redirect(url_for('homePage'))
     return render_template('login.html')
-    
 
 @app.route("/accountsettings", methods =["GET", "POST"])
 def accountSettings():
@@ -73,7 +63,7 @@ def accountSettings():
         budget = request.form["budget"]
         children = request.form["children"]
         ocupation = request.form["ocupation"]
-        workSchedule ={ "Monday" : (request.form["mSchedule1"], request.form["mSchedule2"]),
+        workSchedule = { "Monday" : (request.form["mSchedule1"], request.form["mSchedule2"]),
                         "Tuesday" : (request.form["tSchedule1"], request.form["tSchedule2"]),
                         "Wednesday" : (request.form["wSchedule1"], request.form["wSchedule2"]),
                         "Thursday" : (request.form["thSchedule1"], request.form["thSchedule2"]),

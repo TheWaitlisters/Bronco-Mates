@@ -10,36 +10,27 @@
        <!-- USERNAME IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
         <label for="username">Username</label>
         <br>
-        <input type="text" name="username"
-               placeholder="Username"
-               value="{{ request.form['username'] }}"></input>
+        <input type="text" name="username" placeholder="Username" value="{{ request.form['username'] }}">
         <br>
 
        <!-- PASSWORD IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
         <label for="password">Password</label>
         <br>
-        <input type="text" name="password"
-               placeholder="Password"
-               value="{{ request.form['password'] }}"></input>
+        <input type="text" name="password" placeholder="Password" value="{{ request.form['password'] }}">
         <br>
         <hr>
-
 
         <div id="name">
               <div style="margin-right:20px; float:left">
                      <label for="firstName">First Name</label>
                      <br>
-                            <input type="text" name="firstName"
-                            placeholder="First Name"
-                            value="{{ request.form['firstName'] }}"></input>
+                            <input type="text" name="firstName" placeholder="First Name" value="{{ request.form['firstName'] }}">
                      <br>
               </div>
               <div>
                      <label for="lastName">Last Name</label>
                      <br>
-                            <input type="text" name="lastName"
-                            placeholder="Last Name"
-                            value="{{ request.form['lastName'] }}"></input>
+                            <input type="text" name="lastName" placeholder="Last Name" value="{{ request.form['lastName'] }}">
                      <br>
               </div>
         </div>
@@ -47,36 +38,30 @@
         <label for="phoneNumber">Phone Number</label>
         <br>
         <input type="tel" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-               placeholder="123-456-7890"
-               value="{{ request.form['phoneNumber'] }}"></input>
+              placeholder="123-456-7890" value="{{ request.form['phoneNumber'] }}">
         <br>
 
 
         <label for="email">Email</label>
         <br>
-        <input type="email" name="email"
-               placeholder="Email"
-               value="{{ request.form['email'] }}"></input>
+        <input type="email" name="email" placeholder="Email" value="{{ request.form['email'] }}">
         <br>
 
         <!-- CHECK INPUT TO ENSURE IT IS AN INT -->
         <label for="age">Age</label>
         <br>
-        <input type="number" name="age"
-               placeholder="Age"
-               value="{{ request.form['age'] }}"></input>
+        <input type="number" name="age" placeholder="Age" value="{{ request.form['age'] }}">
         <br>
 
         <!-- DROP DOWN BOX FOR GENDER --> 
         <label for="gender">Gender</label>
         <br>
-        <input type="text" name="gender"
-               placeholder="Gender"
-               value="{{ request.form['gender'] }}"></input>
+        <input type="text" name="gender" placeholder="Gender" value="{{ request.form['gender'] }}">
         <br>
 
         <label for="standing">College Standing</label>
         <br>
+              <input type="hidden" name="standing" value="Prefer not to disclose">
               <input type="radio" id="default" name="standing" checked value="Prefer not to disclose">
               <label for="default">Prefer not to disclose</label><br>
               <input type="radio" id="freshman" name="standing" value="Freshman">
@@ -95,54 +80,42 @@
               <div style="margin-right:20px; float:left">
                      <label for="major">Major</label>
                      <br>
-                     <input type="text" name="major"
-                            placeholder="Major"
-                            value="{{ request.form['major'] }}"></input>
+                     <input type="text" name="major" placeholder="Major" value="{{ request.form['major'] }}">
                      <br>
               </div>
               <div>
                      <label for="minor">Minor</label>
                      <br>
-                     <input type="text" name="minor"
-                            placeholder="Minor"
-                            value="{{ request.form['minor'] }}"></input>
+                     <input type="text" name="minor" placeholder="Minor" value="{{ request.form['minor'] }}">
                      <br>
               </div>
         </div>
 
-       <!-- Note: When checked, returns true; when not checked, returns nothing-->
         <label for="smoker">Smoker?</label>
         <br>
         <span style="margin-left:10px">Yes</span>
-        <input type="checkbox" name="smoker" value=true></input>
+        <input type="hidden" name="smoker" value=False>
+        <input type="checkbox" name="smoker" value=True>
         <br>
 
         <label for="pets"># of Pets</label>
         <br>
-        <input type="number" name="pets"
-              placeholder="# of pets"
-              value="{{ request.form['pets'] }}"></input>
+        <input type="number" name="pets" placeholder="# of pets" value="{{ request.form['pets'] }}">
         <br>
 
         <label for="budget">Budget per month</label>
         <br>
-        <input type="number" name="budget"
-              placeholder="Budget"
-              value="{{ request.form['budget'] }}"></input>
+        <input type="number" name="budget" placeholder="Budget" value="{{ request.form['budget'] }}">
         <br>
 
         <label for="children"># of children</label>
         <br>
-        <input type="number" name="children"
-              placeholder="# of children"
-              value="{{ request.form['children'] }}"></input>
+        <input type="number" name="children" placeholder="# of children" value="{{ request.form['children'] }}">
         <br>
 
         <label for="occupation">Occupation</label>
         <br>
-        <input type="text" name="ocupation"
-              placeholder="Ocupation"
-              value="{{ request.form['ocupation'] }}"></input>
+        <input type="text" name="ocupation" placeholder="Ocupation" value="{{ request.form['ocupation'] }}">
         <br>
 
         <label for="schedule">Work Schedule</label>
@@ -157,48 +130,46 @@
                         <label for="sunSchedule" style="margin-bottom:4px">Sunday</label>
                   </div>
                   <div>
-                        <input type="time" name="mSchedule1" value="{{ request.form['monday'] }}"></input>
+                        <input type="time" name="mSchedule1" value="{{ request.form['monday'] }}">
                         <span>to</span>
-                        <input type="time" name="mSchedule2" value="{{ request.form['monday2'] }}"></input>
+                        <input type="time" name="mSchedule2" value="{{ request.form['monday2'] }}">
                         <br>
 
-                        <input type="time" name="tSchedule1" value="{{ request.form['tuesday1'] }}"></input>
+                        <input type="time" name="tSchedule1" value="{{ request.form['tuesday1'] }}">
                         <span>to</span>
-                        <input type="time" name="tSchedule2" value="{{ request.form['tuesday2'] }}"></input>
+                        <input type="time" name="tSchedule2" value="{{ request.form['tuesday2'] }}">
                         <br>
 
-                        <input type="time" name="wSchedule1" value="{{ request.form['wednesday1'] }}"></input>
+                        <input type="time" name="wSchedule1" value="{{ request.form['wednesday1'] }}">
                         <span>to</span>
-                        <input type="time" name="wSchedule2" value="{{ request.form['wednesday2'] }}"></input>
+                        <input type="time" name="wSchedule2" value="{{ request.form['wednesday2'] }}">
                         <br>
 
-                        <input type="time" name="thSchedule1" value="{{ request.form['thursday1'] }}"></input>
+                        <input type="time" name="thSchedule1" value="{{ request.form['thursday1'] }}">
                         <span>to</span>
-                        <input type="time" name="thSchedule2" value="{{ request.form['thursday2'] }}"></input>
+                        <input type="time" name="thSchedule2" value="{{ request.form['thursday2'] }}">
                         <br>
 
-                        <input type="time" name="fSchedule1" value="{{ request.form['friday1'] }}"></input>
+                        <input type="time" name="fSchedule1" value="{{ request.form['friday1'] }}">
                         <span>to</span>
-                        <input type="time" name="fSchedule2" value="{{ request.form['friday2'] }}"></input>
+                        <input type="time" name="fSchedule2" value="{{ request.form['friday2'] }}">
                         <br>
 
-                        <input type="time" name="satSchedule1" value="{{ request.form['saturday1'] }}"></input>
+                        <input type="time" name="satSchedule1" value="{{ request.form['saturday1'] }}">
                         <span>to</span>
-                        <input type="time" name="satSchedule2" value="{{ request.form['saturday2'] }}"></input>
+                        <input type="time" name="satSchedule2" value="{{ request.form['saturday2'] }}">
                         <br>
 
-                        <input type="time" name="sunSchedule1" value="{{ request.form['sunday1'] }}"></input>
+                        <input type="time" name="sunSchedule1" value="{{ request.form['sunday1'] }}">
                         <span>to</span>
-                        <input type="time" name="sunSchedule2" value="{{ request.form['sunday2'] }}"></input>
+                        <input type="time" name="sunSchedule2" value="{{ request.form['sunday2'] }}">
                         <br>
                   </div>
         </div>
 
         <label for="moveDate">Move in Date</label>
         <br>
-        <input type="date" name="moveDate"
-              placeholder="Move in Date"
-              value="{{ request.form['moveDate'] }}"></input>
+        <input type="date" name="moveDate" placeholder="Move in Date" value="{{ request.form['moveDate'] }}">
         <br> 
 
         <label for="bio">Bio</label>

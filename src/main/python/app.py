@@ -14,14 +14,16 @@ def createApp():
 
 app = createApp()
 
-messages = [{"username" : 'username1',
+accountDB = [{"username" : 'username1',
              "email" : "email1" }]   
+
+listingDB = [{"address" : "address1"}]
 
 loginInfo = [{'username' : 'testusername', 'password' : 'testpassword'}]
 
 @app.route("/")
 def homePage():
-    return render_template('index.html', utc_dt=datetime.datetime.utcnow())
+    return render_template('index.html', account = accountDB, listing = listingDB)
 
 @app.route("/hello")
 def hello():
@@ -29,7 +31,7 @@ def hello():
 
 @app.route("/databasetest")
 def databaseTesting():
-    return render_template('database_test.html', content = messages)
+    return render_template('database_test.html', account = accountDB)
 
 @app.route('/login', methods =["GET", 'POST'])
 def login():
@@ -78,7 +80,7 @@ def accountSettings():
         elif not password:
             flash("Password required")
         else:
-            messages.append({
+            accountDB.append({
                 "username" : username,
                 "password" : password,
                 "phoneNumber" : phoneNumber,
@@ -103,6 +105,37 @@ def accountSettings():
 
 @app.route("/createlisting", methods =("GET", "POST"))
 def createListing():
+    if request.method == "POST":
+        address = request.form["address"]
+        address2 = request.form["address2"]
+        city = request.form["city"]
+        country = request.form["country"]
+        state = request.form["state"]
+        zip = request.form["zip"]
+        beds = request.form["beds"]
+        baths = request.form["baths"]
+        price = request.form["price"]
+        amenities = request.form["amenities"]
+        addInfo = request.form["addInfo"]
+
+        if not address:
+            flash("Address required")
+        else:
+            listingDB.append({
+                "address" : address,
+                "address2" : address2,
+                "city" : city,
+                "country" : country,
+                "state" : state,
+                "zip" : zip,
+                "beds" : beds,
+                "baths" : baths,
+                "price" : price,
+                "amenities" : amenities,
+                "addInfo" : addInfo
+            })
+            return redirect(url_for("homePage"))
+
     return render_template("listing_description.html")
 
 @app.route("/favorites", methods =("GET", "POST"))

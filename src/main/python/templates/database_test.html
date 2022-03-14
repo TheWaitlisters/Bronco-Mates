@@ -3,7 +3,7 @@
 {% block content %}
     <h1>{% block title %} Comments {% endblock %}</h1>
     <div style="width: 50%; margin: auto">
-        {% for content in content %}
+        {% for content in account %}
             {% if loop.index % 2 == 0 %}
                 {% set bg_color = '#e6f9ff' %}
             {% else %}

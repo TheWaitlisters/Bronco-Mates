@@ -5,6 +5,7 @@
     <p>Please Note: Anything you put here will be public</p>
     <p>Besides your username and password</p>
     <hr>
+    <div class="center">
     <form method="post">
 
        <!-- USERNAME IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
@@ -177,10 +178,11 @@
         <textarea name="bio"
               placeholder="Additional information you want others to know!"
               rows="15"
-              cols="60"
+              cols="90"
               >{{ request.form['bio'] }}</textarea>
         <br>
 
         <button type="submit">Submit</button>
-    </form>
+       </form>
+       </div>
 {% endblock %}

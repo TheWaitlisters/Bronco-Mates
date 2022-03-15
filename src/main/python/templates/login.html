@@ -2,20 +2,19 @@
 
 {% block content %}
     <h1>{% block title %} Login {% endblock %}</h1>
-    <form method="post">
-        <label for="username">Username</label>
-        <br>
-        <input type="text" name="username"
-               placeholder="username"
-               value="{{ request.form['username'] }}"></input>
-        <br>
+    <div class="login">
+        <form method="post">
+            <h1 style="width:50%; margin-left:25%">Bronco Mates</h1>
+            <input type="text" name="username" placeholder="Username" value="{{ request.form['username'] }}" 
+                style="width:50%; margin-left:25%">
+            <br>
 
-        <label for="password">Password</label>
-        <br>
-        <input type="text" name="password"
-               placeholder="password"
-               value="{{ request.form['password'] }}"></input>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+            <input type="text" name="password" placeholder="Password" value="{{ request.form['password'] }}"
+                style="width:50%; margin-left:25%">
+            <br>
+
+            <button type="submit" style="width:50%; margin-left:25%">Login</button>
+        </form>
+        <a href="{{ url_for('accountSettings') }}" style="width:50%; margin-left:45%">Sign Up</a>
+    </div>
 {% endblock %}

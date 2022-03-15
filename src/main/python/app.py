@@ -14,10 +14,9 @@ def createApp():
 
 app = createApp()
 
-accountDB = [{"username" : 'username1',
-             "email" : "email1" }]   
+accountDB = []   
 
-listingDB = [{"address" : "address1"}]
+listingDB = []
 
 loginInfo = [{'username' : 'testusername', 'password' : 'testpassword'}]
 

@@ -1,18 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div style="float:right; padding-left:20px">
-        <a href="{{ url_for('createListing') }}" style = "padding:5px; border:3px; border-style:solid; border-color:black; background-color:#04AA6D">Login</a>
-    </div>
-    <div style="float:right">
-        <a href="{{ url_for('login') }}" style = "padding:5px; border:3px; border-style:solid; border-color:black; background-color:#04AA6D">Create Listing</a>
-    </div>
-    <div style="padding-left:10px; border-bottom:solid #000000">
-        <h1><strong>Bronco Mates</strong></h1>
-        <p style="padding-left:20px"><i>The place to find your newest roommates!</i></p>
+    <div style="background-image:url(https://www.dailynews.com/wp-content/uploads/migration/2015/201510/NEWS_151019644_AR_0_RWWJVODXOYUU.jpg);
+                background-size: 100% 300px; border-bottom:solid black; padding-top:10px">
+        <div style="float:right; padding-left:20px">
+            <a href="{{ url_for('login') }}" style = "padding:5px; border:3px; border-style:solid; border-color:black; background-color:#04AA6D">Login</a>
+        </div>
+        <div style="float:right">
+            <a href="{{ url_for('createListing') }}" style = "padding:5px; border:3px; border-style:solid; border-color:black; background-color:#04AA6D">Create Listing</a>
+        </div>
+        <div style="float:left">        
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Cal_Poly_Pomona_Broncos_logo.svg/800px-Cal_Poly_Pomona_Broncos_logo.svg.png" 
+            alt="CPP Logo" style="width:200px; height:100px">
+        </div>
+        <div style="padding-left:10px; padding-top:10px; width:20%">
+            <div style="background-color:white">
+                <h1><strong>Bronco Mates</strong></h1>
+                <p style="padding-left:20px"><i>The place to find your newest roommates!</i></p>
+            </div>
+        </div>
     </div>
 
-    <div style="padding-right:10%;padding-bottom:100%; float:left; background-color:#e6f9ff; border-right:solid #000000; flex-direction:column">
+    <div style="width:20%;padding-bottom:100%; float:left; background-color:#e6f9ff; border-right:solid #000000">
+        {% for content in listing %}
+        <div style="border-bottom: dashed black; padding: 10px">
+            <span>{{ content["address"] }} {{ content["address2"] }}</span>
+            <span style="float:right">{{ content["beds"] }} Beds</span>
+            <br>
+            <span>{{ content["city"] }}, {{ content["state"] }} {{ content["zip"] }}</span>
+            <span style="float:right">{{ content["baths"]}} Baths</span>
+            <br>
+            <span>{{ content["country"] }} </span>
+            <span style="float:right">${{ content["price"] }}</span>
+        </div>
+        {% endfor %}
+        
+
+    </div>
+    <div style="background-color:#eee; padding-bottom:100%">
         {% for content in listing %}
         <div>
             <p>Address: {{ content["address"] }}</p>
@@ -30,31 +55,5 @@
         </div>
     {% endfor %}
         
-
-    </div>
-    <div style="background-color:#eee; padding-bottom:100%">
-        {% for content in account %}
-            <div>
-                <p>Username: {{ content["username"] }}</p>
-                <p>Password: {{ content["password"] }}</p>
-                <p>Phone Number: {{ content["phoneNumber"] }}</p>
-                <p>Email: {{ content["email"] }}</p>
-                <p>Age: {{ content["age"] }}</p>
-                <p>Gender: {{ content["gender"] }}</p>
-                <p>Standing: {{ content["standing"] }}</p>
-                <p>Major: {{ content["major"] }}</p>
-                <p>Minor: {{ content["minor"] }}</p>
-                <p>Smoker: {{ content["smoker"] }}</p>
-                <p># of Pets: {{ content["pets"] }}</p>
-                <p>Budget: {{ content["budget"] }}</p>
-                <p># of Children: {{ content["children"] }}</p>
-                <p>Ocupation: {{ content["ocupation"] }}</p>
-                <p>Work Schedule: {{ content["workSchedule"] }}</p>
-                <p>Move in Date: {{ content["moveDate"] }}</p>
-                <p>Bio: {{ content["bio"] }}</p>
-                <hr>
-            </div>
-        {% endfor %}
-    </div>
 
 {% endblock %}

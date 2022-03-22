@@ -1,86 +1,72 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>{% block title %} Create a Listing {% endblock %}</h1>
-    <div class="center">
+    <div class="container-fluid bg-light w-50 p-5">
        <form method="post">
-              <label for="address">Address</label>
-              <br>
-              <input type="text" name="address" placeholder="Address" value="{{ request.form['address'] }}" style = "width: 90%">
-              <br>
+              <h1>Required Information</h1>
+              <label for="address" class="form-label" required>Address</label>
+              <input type="text" name="address" class="form-control" placeholder="Address" value="{{ request.form['address'] }}">
 
-              <label for="address2">Address 2 (Optional)</label>
-              <br>
-              <input type="text" name="address2" placeholder="Apartment, suite, etc. (optional)" value="{{ request.form['address2'] }}"
-                     style = "width: 90%">
-              <br>
+              <label for="address2" class="form-label">Address 2 (Optional)</label>
+              <input type="text" name="address2" class="form-control" 
+                     placeholder="Apartment, suite, etc. (optional)" value="{{ request.form['address2'] }}">
               
-              <label for="city">City</label>
-              <br>
-              <input type="text" name="city"
-                     placeholder="City"
-                     value="{{ request.form['city'] }}"></input>
-              <br>
-
-              <div id="countryStateZip"></div>
-                     <div style="float:left; padding-right:15px;">
-                            <label for="country">Country</label>
-                            <br>
-                            <input type="text" name="country" placeholder="Country/Region Code" value="{{ request.form['country']}}">
+              <div class="row">
+                     <div class="col-md-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" name="city" class="form-control" placeholder="City"
+                                   value="{{ request.form['city'] }}"></input>
                      </div>
-                     <div style="float:left; padding-right:15px">
-                            <label for="country">State</label>
-                            <br>
-                            <input type="text" name="state" placeholder="State" value="{{ request.form['state'] }}">
-                     </div>    
-                            <label for="country">ZIP code</label>   
-                            <br>    
-                            <input type="text" name="zip" placeholder="ZIP code" value="{{ request.form['zip'] }}">
-              <br>
+                     <div class="col-md-4">
+                            <label for="state" class="form-label">State</label>
+                            <select name="state" class="form-select">
+                                   <option selected>Choose...</option>
+                                   <option value="CA">California</option>
+                                   <option value="Other">Other</option>
+                            </select>
+                     </div>
+                     <div class="col-md-2">
+                            <label for="zip" class="form-label">Zip</label>
+                            <input type="number" class="form-control" name="zip"
+                                   placeholder="ZIP code" value="{{ request.form['zip'] }}">
+                     </div>
+              </div>
+              <div class="row">
+                     <div class="col">
+                            <label for="beds" class="form-label"># of Beds</label>
+                            <input type="number" class="form-control" name="beds"
+                                   placeholder="# of beds" value="{{ request.form['beds']}}">
+                     </div>
+                     <div class="col">
+                            <label for="baths" class="form-label"># of Baths</label>       
+                            <input type="number" class="form-control" name="baths"
+                                   placeholder="# of baths" value="{{ request.form['baths'] }}">
+                     </div>
+                     <div class="col">
+                            <label for="price" class="form-label">Price</label>   
+                            <input type="number" name="price" class="form-control"
+                                   placeholder="Price" value="{{ request.form['price'] }}">
+                     </div>
+                     <div class="col">
+                            <label for="pets" class="form-label"># of Pets</label>       
+                            <input type="number" name="pets" class="form-control"
+                                   placeholder="# of pets (already)" value="{{ request.form['pets'] }}">
+                     </div>
+              </div>
               <hr>
 
-              <div id="bedsBaths"></div>
-              <div style="float:left; padding-right:15px;">
-                     <label for="beds"># of Beds</label>
-                     <br>
-                            <input type="number" name="beds" placeholder="# of beds" value="{{ request.form['beds']}}">
-              </div>
-              <div style="float:left; padding-right:15px;">
-                     <label for="baths"># of Baths</label>   
-                     <br>    
-                     <input type="number" name="baths" placeholder="# of baths" value="{{ request.form['baths'] }}">
-              </div>
-                     <label for="pets"># of Pets</label>   
-                     <br>    
-                     <input type="number" name="pets" placeholder="# of pets (already)" value="{{ request.form['pets'] }}">
-              <br>
-
-              <label for="price">Price</label>   
-              <br>    
-              <input type="number" name="price" placeholder="Price" value="{{ request.form['price'] }}">
-              <br>
-
-              <label for="amenities">Amenities</label>   
-              <br>
-              <textarea name="amenities"
-              placeholder="Amenities offered"
-                     rows="15"
-                     cols="90"
-                     >{{ request.form['amenities'] }}</textarea>
-              <br>
+              
+              <label for="amenities" class="form-label">Amenities</label>
+              <textarea class="form-control" name="amenities" placeholder="What are some amenities offered?"
+                  rows="15">{{ request.form['bio'] }}</textarea>
               <hr>
        
-
-
-              <label for="addInfo">Additional Information</label>
-              <br>
-              <textarea name="addInfo"
-                     placeholder="Additional information you want others to know!"
-                     rows="15"
-                     cols="90"
-                     >{{ request.form['addInfo'] }}</textarea>
+              <label for="addInfo" class="form-label">Additional Information</label>
+                     <textarea class="form-control" name="addInfo" placeholder="Additional information you want others to know!"
+                         rows="15">{{ request.form['addInfo'] }}</textarea>
               <br>
 
-              <button type="submit">Submit</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
        </form>
       </div>
 {% endblock %}

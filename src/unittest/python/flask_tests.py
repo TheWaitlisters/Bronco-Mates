@@ -5,7 +5,6 @@ import logging
 from app import *
 
 HOME_PAGE = "/"
-HELLO = "/hello"
 DATABASE_TEST = "/databasetest"
 ACCOUNT_SETTINGS = "/accountsettings"
 CREATE_LISTING = "/createlisting"
@@ -34,10 +33,7 @@ class AppTestCase(unittest.TestCase):
         self.ctx.pop()
 
     '''
-        Tests for a missing piece of information
-        The first couple tests are to test if there is a
-        piece of required information missing. The
-        rest will assume that required information is given
+        Tests for Account
     '''
     def test_account_settings_given_all_defaults(self):
         response = self.client.post(ACCOUNT_SETTINGS,
@@ -73,6 +69,41 @@ class AppTestCase(unittest.TestCase):
                      "bio" : ""
                      })
         assert response.status_code == 302
+
+    def test_account_settings_given_all_defaults2(self):
+        response = self.client.post(ACCOUNT_SETTINGS,
+            data = { "username" : "",
+                     "password" : "",
+                     "phoneNumber" : "",
+                     "email" : "",
+                     "age" : "",
+                     "gender" : "",
+                     "standing" : "",
+                     "major" : "",
+                     "minor" : "",
+                     "smoker" : "",
+                     "pets" : "",
+                     "budget" : "",
+                     "children" : "",
+                     "ocupation" : "",
+                     "mSchedule1" : "",
+                     "mSchedule2" : "",
+                     "tSchedule1" : "",
+                     "tSchedule2" : "",
+                     "wSchedule1" : "",
+                     "wSchedule2" : "",
+                     "thSchedule1" : "",
+                     "thSchedule2" : "",
+                     "fSchedule1" : "",
+                     "fSchedule2" : "",
+                     "satSchedule1" : "",
+                     "satSchedule2" : "",
+                     "sunSchedule1" : "",
+                     "sunSchedule2" : "",
+                     "moveDate" : "",
+                     "bio" : ""
+                     })
+        assert response.status_code == 200
 
     def test_account_settings_given_all(self):
         response = self.client.post(ACCOUNT_SETTINGS,
@@ -185,10 +216,161 @@ class AppTestCase(unittest.TestCase):
                      })
         assert response.status_code == 200
 
+    '''
+        Tests for Create Listing
+    '''
+    def test_listings_settings_given_all(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "address",
+                     "address2" : "",
+                     "city" : "Pomona",
+                     "state" : "California",
+                     "zip" : "00000",
+                     "beds" : "0",
+                     "baths" : "0",
+                     "price" : "0",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 302
+
+    def test_listings_settings_given_all_defaults(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "",
+                     "address2" : "",
+                     "city" : "",
+                     "state" : "",
+                     "zip" : "",
+                     "beds" : "",
+                     "baths" : "",
+                     "price" : "",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+    
+    def test_listings_settings_missing_address(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "",
+                     "address2" : "",
+                     "city" : "Pomona",
+                     "state" : "California",
+                     "zip" : "00000",
+                     "beds" : "0",
+                     "baths" : "0",
+                     "price" : "0",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+    
+    def test_listings_settings_missing_city(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "address",
+                     "address2" : "",
+                     "city" : "",
+                     "state" : "California",
+                     "zip" : "00000",
+                     "beds" : "0",
+                     "baths" : "0",
+                     "price" : "0",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+    
+    def test_listings_settings_missing_state(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "address",
+                     "address2" : "",
+                     "city" : "Pomona",
+                     "state" : "",
+                     "zip" : "00000",
+                     "beds" : "0",
+                     "baths" : "0",
+                     "price" : "0",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+
+    def test_listings_settings_missing_state2(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "address",
+                     "address2" : "",
+                     "city" : "Pomona",
+                     "state" : "Choose...",
+                     "zip" : "00000",
+                     "beds" : "0",
+                     "baths" : "0",
+                     "price" : "0",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+
+    def test_listings_settings_missing_zip(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "address",
+                     "address2" : "",
+                     "city" : "Pomona",
+                     "state" : "California",
+                     "zip" : "",
+                     "beds" : "0",
+                     "baths" : "0",
+                     "price" : "0",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+
+    def test_listings_settings_missing_beds(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "address",
+                     "address2" : "",
+                     "city" : "Pomona",
+                     "state" : "California",
+                     "zip" : "00000",
+                     "beds" : "",
+                     "baths" : "0",
+                     "price" : "0",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+
+    def test_listings_settings_missing_baths(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "address",
+                     "address2" : "",
+                     "city" : "Pomona",
+                     "state" : "California",
+                     "zip" : "00000",
+                     "beds" : "0",
+                     "baths" : "",
+                     "price" : "0",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+
+    def test_listings_settings_missing_price(self):
+        response = self.client.post(CREATE_LISTING,
+            data = { "address" : "address",
+                     "address2" : "",
+                     "city" : "Pomona",
+                     "state" : "California",
+                     "zip" : "00000",
+                     "beds" : "0",
+                     "baths" : "0",
+                     "price" : "",
+                     "amenities" : "",
+                     "addInfo" : ""
+                     })
+        assert response.status_code == 200
+
     def test_check_urls(self):
         response = self.client.get(HOME_PAGE)
-        assert response.status_code == 200
-        response = self.client.get(HELLO)
         assert response.status_code == 200
         response = self.client.get(DATABASE_TEST)
         assert response.status_code == 200

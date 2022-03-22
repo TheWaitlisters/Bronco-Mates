@@ -1,59 +1,66 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div style="background-image:url(https://www.dailynews.com/wp-content/uploads/migration/2015/201510/NEWS_151019644_AR_0_RWWJVODXOYUU.jpg);
-                background-size: 100% 300px; border-bottom:solid black; padding-top:10px">
-        <div style="float:right; padding-left:20px">
-            <a href="{{ url_for('login') }}" style = "padding:5px; border:3px; border-style:solid; border-color:black; background-color:#04AA6D">Login</a>
-        </div>
-        <div style="float:right">
-            <a href="{{ url_for('createListing') }}" style = "padding:5px; border:3px; border-style:solid; border-color:black; background-color:#04AA6D">Create Listing</a>
-        </div>
-        <div style="float:left">        
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Cal_Poly_Pomona_Broncos_logo.svg/800px-Cal_Poly_Pomona_Broncos_logo.svg.png" 
-            alt="CPP Logo" style="width:200px; height:100px">
-        </div>
-        <div style="padding-left:10px; padding-top:10px; width:20%">
-            <div style="background-color:white">
-                <h1><strong>Bronco Mates</strong></h1>
-                <p style="padding-left:20px"><i>The place to find your newest roommates!</i></p>
+    <div class="border-bottom border-dark" style="background-image:url(https://www.dailynews.com/wp-content/uploads/migration/2015/201510/NEWS_151019644_AR_0_RWWJVODXOYUU.jpg);
+                background-size: 100% 200%">
+        
+        <div class="row w-25" style="float:right">
+            <div class="col">
+                <div class="border border-dark border-3 bg-light">
+                    <a href="{{ url_for('login') }}">Login</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border border-dark border-3 bg-light">
+                    <a href="{{ url_for('createListing') }}">Create Listing</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="width:20%;padding-bottom:100%; float:left; background-color:#e6f9ff; border-right:solid #000000">
-        {% for content in listing %}
-        <div style="border-bottom: dashed black; padding: 10px">
-            <span>{{ content["address"] }} {{ content["address2"] }}</span>
-            <span style="float:right">{{ content["beds"] }} Beds</span>
-            <br>
-            <span>{{ content["city"] }}, {{ content["state"] }} {{ content["zip"] }}</span>
-            <span style="float:right">{{ content["baths"]}} Baths</span>
-            <br>
-            <span>{{ content["country"] }} </span>
-            <span style="float:right">${{ content["price"] }}</span>
+        <div class="row w-25 bg-white border">
+            <div class="col">    
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Cal_Poly_Pomona_Broncos_logo.svg/800px-Cal_Poly_Pomona_Broncos_logo.svg.png" 
+                    alt="CPP Logo" style="width:200px; height:100px">
+            </div>
+            <div class="col">    
+                <h1><strong>Bronco Mates</strong></h1>
+            </div> 
+            <p><i>The place to find your newest roommates!</i></p>
         </div>
-        {% endfor %}
-        
-
     </div>
-    <div style="background-color:#eee; padding-bottom:100%">
-        {% for content in listing %}
-        <div>
-            <p>Address: {{ content["address"] }}</p>
-            <p>Address2: {{ content["address2"] }}</p>
-            <p>City: {{ content["city"] }}</p>
-            <p>Country: {{ content["country"] }}</p>
-            <p>State: {{ content["state"] }}</p>
-            <p>ZIP Code: {{ content["zip"] }}</p>
-            <p>Beds: {{ content["beds"] }}</p>
-            <p>Baths: {{ content["baths"] }}</p>
-            <p>Price: {{ content["price"] }}</p>
-            <p>Amenities: {{ content["amenities"] }}</p>
-            <p>Additional Information: {{ content["addInfo"] }}</p>
-            <hr>
+    
+    <div class="row h-100">
+        <div class="col-md-2 border-left border-dark" style="background-color:#e6f9ff">
+            {% for content in listing %}
+            <div class="pb-5 p-2 border-bottom">
+                <span>{{ content["address"] }} {{ content["address2"] }}</span>
+                <span style="float:right">{{ content["beds"] }} Beds</span>
+                <br>
+                <span>{{ content["city"] }}, {{ content["state"] }} {{ content["zip"] }}</span>
+                <span style="float:right">{{ content["baths"]}} Baths</span>
+                <br>
+                <span style="float:right">${{ content["price"] }}</span>
+            </div>
+            {% endfor %}
         </div>
-    {% endfor %}
         
+        <div class="col h-100 bg-light">
+            {% for content in listing %}
+            <div>
+                <p>Address: {{ content["address"] }}</p>
+                <p>Address2: {{ content["address2"] }}</p>
+                <p>City: {{ content["city"] }}</p>
+                <p>State: {{ content["state"] }}</p>
+                <p>ZIP Code: {{ content["zip"] }}</p>
+                <p>Beds: {{ content["beds"] }}</p>
+                <p>Baths: {{ content["baths"] }}</p>
+                <p>Price: {{ content["price"] }}</p>
+                <p>Amenities: {{ content["amenities"] }}</p>
+                <p>Additional Information: {{ content["addInfo"] }}</p>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

@@ -1,188 +1,200 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Account Settings {% endblock %}</h1>
-    <p>Please Note: Anything you put here will be public</p>
-    <p>Besides your username and password</p>
-    <hr>
-    <div class="center">
-    <form method="post">
+      <h1>{% block title %} Account Settings {% endblock %}</h1>
+      <p>Please Note: Anything you put here will be public</p>
+      <p>Besides your username and password</p>
+      <hr>
+      <div class="container-fluid bg-light w-50 p-5">
+      <form method="post">
 
-       <!-- USERNAME IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
-        <label for="username">Username</label>
-        <br>
-        <input type="text" name="username" placeholder="Username" value="{{ request.form['username'] }}">
-        <br>
+      <div class="mb-3">
+            <h2>Login</h2>         
+            <!-- USERNAME IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
+                  <input type="username" class="form-control" name="username" placeholder="Username" value="{{ request.form['username'] }}">
+            </div>
+            <!-- PASSWORD IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
+            <div class="mb-3">
+                  <input type="password" class="form-control" name="password" placeholder="Password" value="{{ request.form['password'] }}">
+            </div>
+      <hr>
 
-       <!-- PASSWORD IS FOR TESTING PURPOSES, EVENTUALLY TAKE THIS OUT-->
-        <label for="password">Password</label>
-        <br>
-        <input type="text" name="password" placeholder="Password" value="{{ request.form['password'] }}">
-        <br>
-        <hr>
-
-        <div id="name">
-              <div style="margin-right:20px; float:left">
-                     <label for="firstName">First Name</label>
-                     <br>
-                            <input type="text" name="firstName" placeholder="First Name" value="{{ request.form['firstName'] }}">
-                     <br>
-              </div>
-              <div>
-                     <label for="lastName">Last Name</label>
-                     <br>
-                            <input type="text" name="lastName" placeholder="Last Name" value="{{ request.form['lastName'] }}">
-                     <br>
-              </div>
-        </div>
-
-        <label for="phoneNumber">Phone Number</label>
-        <br>
-        <input type="tel" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              placeholder="123-456-7890" value="{{ request.form['phoneNumber'] }}">
-        <br>
-
-
-        <label for="email">Email</label>
-        <br>
-        <input type="email" name="email" placeholder="Email" value="{{ request.form['email'] }}">
-        <br>
-
-        <!-- CHECK INPUT TO ENSURE IT IS AN INT -->
-        <label for="age">Age</label>
-        <br>
-        <input type="number" name="age" placeholder="Age" value="{{ request.form['age'] }}">
-        <br>
-
-        <!-- DROP DOWN BOX FOR GENDER --> 
-        <label for="gender">Gender</label>
-        <br>
-        <input type="text" name="gender" placeholder="Gender" value="{{ request.form['gender'] }}">
-        <br>
-
-        <label for="standing">College Standing</label>
-        <br>
-              <input type="hidden" name="standing" value="Prefer not to disclose">
-              <input type="radio" id="default" name="standing" checked value="Prefer not to disclose">
-              <label for="default">Prefer not to disclose</label><br>
-              <input type="radio" id="freshman" name="standing" value="Freshman">
-              <label for="freshman">Freshman</label><br>
-              <input type="radio" id="sophomore" name="standing" value="Sophomore">
-              <label for="sophomore">Sophomore</label><br>
-              <input type="radio" id="junior" name="standing" value="Junior">
-              <label for="junior">Junior</label><br>
-              <input type="radio" id="grad" name="standing" value="Grad">
-              <label for="grad">Graduate Student</label><br>
-              <input type="radio" id="other" name="standing" value="Other">
-              <label for="other">Other</label>
-        <br>
-
-        <div id="major/minor">
-              <div style="margin-right:20px; float:left">
-                     <label for="major">Major</label>
-                     <br>
-                     <input type="text" name="major" placeholder="Major" value="{{ request.form['major'] }}">
-                     <br>
-              </div>
-              <div>
-                     <label for="minor">Minor</label>
-                     <br>
-                     <input type="text" name="minor" placeholder="Minor" value="{{ request.form['minor'] }}">
-                     <br>
-              </div>
-        </div>
-
-        <label for="smoker">Smoker?</label>
-        <br>
-        <span style="margin-left:10px">Yes</span>
-        <input type="hidden" name="smoker" value=False>
-        <input type="checkbox" name="smoker" value=True>
-        <br>
-
-        <label for="pets"># of Pets</label>
-        <br>
-        <input type="number" name="pets" placeholder="# of pets" value="{{ request.form['pets'] }}">
-        <br>
-
-        <label for="budget">Budget per month</label>
-        <br>
-        <input type="number" name="budget" placeholder="Budget" value="{{ request.form['budget'] }}">
-        <br>
-
-        <label for="children"># of children</label>
-        <br>
-        <input type="number" name="children" placeholder="# of children" value="{{ request.form['children'] }}">
-        <br>
-
-        <label for="occupation">Occupation</label>
-        <br>
-        <input type="text" name="ocupation" placeholder="Ocupation" value="{{ request.form['ocupation'] }}">
-        <br>
-
-        <label for="schedule">Work Schedule</label>
-        <div id="workScheduleDays">
-                  <div style="margin-right:10px; float:left">     
-                        <label for="mSchedule" style="margin-bottom:4px">Monday</label> <br>
-                        <label for="tSchedule" style="margin-bottom:4px">Tuesday</label> <br>
-                        <label for="wSchedule" style="margin-bottom:4px">Wednesday</label> <br>
-                        <label for="thSchedule" style="margin-bottom:4px">Thursday</label> <br>
-                        <label for="fSchedule" style="margin-bottom:4px">Friday</label> <br> 
-                        <label for="satSchedule" style="margin-bottom:4px">Saturday</label> <br> 
-                        <label for="sunSchedule" style="margin-bottom:4px">Sunday</label>
+      <div class="mb-3">
+            <h2>General Information</h2>
+            <div class="row">
+                  <div class="col">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="First name" value="{{ request.form['firstName'] }}">
                   </div>
-                  <div>
-                        <input type="time" name="mSchedule1" value="{{ request.form['monday'] }}">
-                        <span>to</span>
-                        <input type="time" name="mSchedule2" value="{{ request.form['monday2'] }}">
-                        <br>
-
-                        <input type="time" name="tSchedule1" value="{{ request.form['tuesday1'] }}">
-                        <span>to</span>
-                        <input type="time" name="tSchedule2" value="{{ request.form['tuesday2'] }}">
-                        <br>
-
-                        <input type="time" name="wSchedule1" value="{{ request.form['wednesday1'] }}">
-                        <span>to</span>
-                        <input type="time" name="wSchedule2" value="{{ request.form['wednesday2'] }}">
-                        <br>
-
-                        <input type="time" name="thSchedule1" value="{{ request.form['thursday1'] }}">
-                        <span>to</span>
-                        <input type="time" name="thSchedule2" value="{{ request.form['thursday2'] }}">
-                        <br>
-
-                        <input type="time" name="fSchedule1" value="{{ request.form['friday1'] }}">
-                        <span>to</span>
-                        <input type="time" name="fSchedule2" value="{{ request.form['friday2'] }}">
-                        <br>
-
-                        <input type="time" name="satSchedule1" value="{{ request.form['saturday1'] }}">
-                        <span>to</span>
-                        <input type="time" name="satSchedule2" value="{{ request.form['saturday2'] }}">
-                        <br>
-
-                        <input type="time" name="sunSchedule1" value="{{ request.form['sunday1'] }}">
-                        <span>to</span>
-                        <input type="time" name="sunSchedule2" value="{{ request.form['sunday2'] }}">
-                        <br>
+                  <div class="col">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last name" value="{{ request.form['lastName'] }}">
                   </div>
-        </div>
+            </div>
 
-        <label for="moveDate">Move in Date</label>
-        <br>
-        <input type="date" name="moveDate" placeholder="Move in Date" value="{{ request.form['moveDate'] }}">
-        <br> 
+      
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" name="phoneNumber" placeholder="123-456-7890" value="{{ request.form['phoneNumber'] }}"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
 
-        <label for="bio">Bio</label>
-        <br>
-        <textarea name="bio"
-              placeholder="Additional information you want others to know!"
-              rows="15"
-              cols="90"
-              >{{ request.form['bio'] }}</textarea>
-        <br>
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" name="email" placeholder="Email" value="{{ request.form['email'] }}">
 
-        <button type="submit">Submit</button>
-       </form>
+            <div class="row">
+                  <div class="col">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="number" class="form-control" name="age" placeholder="Age" value="{{ request.form['age'] }}">
+                  </div>
+                  <div class="col">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-select" aria-label="Default Select" name="gender" value="{{ request.form['gender']}}">
+                              <option selected>Prefer not to disclose</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Non-Binary">Non-Binary</option>
+                              <option value="Transgender">Transgender</option>
+                              <option value="Other">Other</option>
+                        </select>
+                        </div>
+                  </div>
+            <hr>
+            <h2>Academics</h2>
+            <div class="row">
+                  <div class="col">
+                        <label for="major" class="form-label">Major</label>
+                        <input type="text" class="form-control" name="major" placeholder="Major" value="{{ request.form['major'] }}">
+                  </div>
+                  <div class="col">
+                        <label for="minor" class="form-label">Minor</label>
+                        <input type="text" class="form-control" name="minor" placeholder="Minor" value="{{ request.form['minor'] }}">
+                  </div>
+            </div>
+
+            <label for="standing" class="form-check-label">College Standing</label>
+            <div class="form-check bg-white border mb-3">
+                  <input type="hidden" name="standing" value="Prefer not to disclose">
+                  <input class="form-check-input" type="radio" id="default" name="standing" checked value="Perfer not to disclose">
+                  <label class="form-check-label" for="default">Prefer not to disclose</label> <br>
+                  <input class="form-check-input" type="radio" id="freshman" name="standing" value="Freshman">
+                  <label class="form-check-label" for="freshman">Freshman</label> <br>
+                  <input class="form-check-input" type="radio" id="sophomore" name="standing" value="Sophomore">
+                  <label class="form-check-label" for="sophomore">Sophomore</label> <br>
+                  <input class="form-check-input" type="radio" id="junior" name="standing" value="Junior">
+                  <label class="form-check-label" for="junior">Junior</label> <br>
+                  <input class="form-check-input" type="radio" id="senior" name="standing" value="Senior">
+                  <label class="form-check-label" for="senior">Senior</label> <br>
+                  <input class="form-check-input" type="radio" id="grad" name="standing" value="Grad">
+                  <label class="form-check-label" for="grad">Graduate Student</label> <br>
+                  <input class="form-check-input" type="radio" id="other" name="standing" value="Other">
+                  <label class="form-check-label" for="other">Other</label>
+            </div>
+            <hr>
+
+            <h2>Personal Information</h2>
+            <div class="row">
+                  <div class="col">
+                        <label for="pets" class="form-label">Pets</label>
+                        <select class="form-select" aria-label="Default Select" name="pets" value="{{ request.form['pets']}}">
+                              <option selected>None</option>
+                              <option value="Dog">Dog</option>
+                              <option value="Cat">Cat</option>
+                              <option value="Bird">Birds</option>
+                              <option value="Fish">Fish</option>
+                              <option value="Reptile">Reptile</option>
+                              <option value="Other">Other</option>
+                        </select>
+                  </div>
+                  <div class="col">
+                        <label class="form-label"># of Children</label>
+                        <input type="number" class="form-control" 
+                              name="children" placeholder="# of children" value="{{ request.form['children'] }}">
+                  </div>
+                  <div class="col">
+                        <label class="form-label">Budget per Month</label>
+                        <input type="number" class="form-control"
+                              name="budget" placeholder="Budget" value="{{ request.form['budget'] }}">
+                  </div>
+            </div>
+
+            <label class="form-label">Are you a smoker?</label>
+            <div class="form-check-inline form-check">
+                  <label class="form-check-label" for="smoker">No</label>
+                  <input class="form-check-input" type="radio" name="smoker" checked value=False>
+            </div>
+            <div class="form-check-inline form-check">
+                  <label class="form-check-label" for="smoker">Yes</label>
+                  <input class="form-check-input" type="radio" name="smoker" value=True>
+            </div>
+            <br>
+
+            <div class="row">
+                  <div class="col">
+                        <label for="occupation" class="form-label">Occupation</label>
+                        <input type="text" class="form-control" name="ocupation" placeholder="Ocupation" value="{{ request.form['ocupation'] }}">
+                        <div class="row">
+                              <label for="moveDate" class="form-label">Move in Date</label>
+                              <input type="date" class="w-50" name="moveDate" style="margin-left:2%" placeholder="Move in Date" 
+                                    value="{{ request.form['moveDate'] }}">
+                        </div>
+                  </div>
+                  <div class="col">
+                  <label for="schedule">Work Schedule</label>
+                  <div class="bg-white border p-2">
+                              <div class="m-1" style="float:left">     
+                                    <label for="mSchedule" style="margin-bottom:4px">Monday</label> <br>
+                                    <label for="tSchedule" style="margin-bottom:4px">Tuesday</label> <br>
+                                    <label for="wSchedule" style="margin-bottom:4px">Wednesday</label> <br>
+                                    <label for="thSchedule" style="margin-bottom:4px">Thursday</label> <br>
+                                    <label for="fSchedule" style="margin-bottom:4px">Friday</label> <br> 
+                                    <label for="satSchedule" style="margin-bottom:4px">Saturday</label> <br> 
+                                    <label for="sunSchedule" style="margin-bottom:4px">Sunday</label>
+                              </div>
+                              <div>
+                                    <input type="time" name="mSchedule1" value="{{ request.form['monday'] }}">
+                                    <span>to</span>
+                                    <input type="time" name="mSchedule2" value="{{ request.form['monday2'] }}">
+                                    <br>
+
+                                    <input type="time" name="tSchedule1" value="{{ request.form['tuesday1'] }}">
+                                    <span>to</span>
+                                    <input type="time" name="tSchedule2" value="{{ request.form['tuesday2'] }}">
+                                    <br>
+
+                                    <input type="time" name="wSchedule1" value="{{ request.form['wednesday1'] }}">
+                                    <span>to</span>
+                                    <input type="time" name="wSchedule2" value="{{ request.form['wednesday2'] }}">
+                                    <br>
+
+                                    <input type="time" name="thSchedule1" value="{{ request.form['thursday1'] }}">
+                                    <span>to</span>
+                                    <input type="time" name="thSchedule2" value="{{ request.form['thursday2'] }}">
+                                    <br>
+
+                                    <input type="time" name="fSchedule1" value="{{ request.form['friday1'] }}">
+                                    <span>to</span>
+                                    <input type="time" name="fSchedule2" value="{{ request.form['friday2'] }}">
+                                    <br>
+
+                                    <input type="time" name="satSchedule1" value="{{ request.form['saturday1'] }}">
+                                    <span>to</span>
+                                    <input type="time" name="satSchedule2" value="{{ request.form['saturday2'] }}">
+                                    <br>
+
+                                    <input type="time" name="sunSchedule1" value="{{ request.form['sunday1'] }}">
+                                    <span>to</span>
+                                    <input type="time" name="sunSchedule2" value="{{ request.form['sunday2'] }}">
+                                    <br>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <label for="bio" class="form-label">Bio</label>
+            <textarea class="form-control" name="bio" placeholder="Additional information you want others to know!"
+                  rows="15">{{ request.form['bio'] }}</textarea>
+
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
        </div>
 {% endblock %}

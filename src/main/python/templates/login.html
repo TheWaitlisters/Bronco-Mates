@@ -1,20 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Login {% endblock %}</h1>
-    <div class="login">
+<br>
+    <div class="container-fluid bg-light w-50 p-5">
         <form method="post">
-            <h1 style="width:50%; margin-left:25%">Bronco Mates</h1>
-            <input type="text" name="username" placeholder="Username" value="{{ request.form['username'] }}" 
-                style="width:50%; margin-left:25%">
+            <h1 class="d-flex justify-content-center">Bronco Mates</h1>
+            <input type="text" class="form-control form-control-lg" placeholder="Username" value="{{ request.form['username'] }}">
+            <input type="text" class="form-control form-control-lg" placeholder="Password" value="{{ request.form['password'] }}">
             <br>
 
-            <input type="text" name="password" placeholder="Password" value="{{ request.form['password'] }}"
-                style="width:50%; margin-left:25%">
-            <br>
-
-            <button type="submit" style="width:50%; margin-left:25%">Login</button>
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
         </form>
-        <a href="{{ url_for('accountSettings') }}" style="width:50%; margin-left:45%">Sign Up</a>
+        <a href="{{ url_for('accountSettings') }}" class="d-flex justify-content-center">Sign Up</a>
     </div>
 {% endblock %}

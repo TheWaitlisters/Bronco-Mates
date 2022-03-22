@@ -1,0 +1,31 @@
+.message {
+    padding: 10px;
+    margin: 5px;
+    background-color: #f3f3f3
+}
+nav a {
+    font-size: 1em;
+    margin-left: 0px;
+    text-decoration: none;
+}
+
+.alert {
+    padding: 20px;
+    margin: 5px;
+    color: #970020;
+    background-color: #ffd5de;
+}
+
+.center {
+      margin: auto;
+      width: 40%;
+      padding: 10px;
+      background-color:ghostwhite
+}
+
+.login {
+      margin: auto;
+      width: 30%;
+      padding: 10px;
+      background-color:ghostwhite
+}

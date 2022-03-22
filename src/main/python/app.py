@@ -24,10 +24,6 @@ loginInfo = [{'username' : 'testusername', 'password' : 'testpassword'}]
 def homePage():
     return render_template('index.html', account = accountDB, listing = listingDB)
 
-@app.route("/hello")
-def hello():
-    return render_template('hello.html')
-
 @app.route("/databasetest")
 def databaseTesting():
     return render_template('database_test.html', account = accountDB)
@@ -108,7 +104,6 @@ def createListing():
         address = request.form["address"]
         address2 = request.form["address2"]
         city = request.form["city"]
-        country = request.form["country"]
         state = request.form["state"]
         zip = request.form["zip"]
         beds = request.form["beds"]
@@ -119,12 +114,23 @@ def createListing():
 
         if not address:
             flash("Address required")
+        elif not city:
+            flash("City required")
+        elif state == "Choose..." or not state:
+            flash("State required")
+        elif not zip:
+            flash("ZIP code required")
+        elif not beds:
+            flash("Number of beds required")
+        elif not baths:
+            flash("Number of baths required")
+        elif not price:
+            flash("Price required")
         else:
             listingDB.append({
                 "address" : address,
                 "address2" : address2,
                 "city" : city,
-                "country" : country,
                 "state" : state,
                 "zip" : zip,
                 "beds" : beds,
@@ -140,16 +146,6 @@ def createListing():
 @app.route("/favorites", methods =("GET", "POST"))
 def favorites():
     return render_template("favorites.html")
-
-@app.route("/insertdocument")
-def insertdocument():
-    client = MongoClient()
-    db = client.bronco_mates
-    collection = db.students
-    record = {"student" : "Andy Munoz",
-              "major" : "Computer Science"}
-    post_id = collection.insert_one(record).inserted_id
-    return render_template('insertdocument.html', print(post_id))
 
 if __name__ == "__main__":
     app.run(debug=True)

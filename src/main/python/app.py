@@ -43,6 +43,7 @@ def login():
             return redirect(url_for('homePage'))
     return render_template('login.html')
 
+
 @app.route("/accountsettings", methods =["GET", "POST"])
 def accountSettings():
     if request.method == "POST":
@@ -107,6 +108,7 @@ def createListing():
         state = request.form["state"]
         zip = request.form["zip"]
         beds = request.form["beds"]
+        roomSize = request.form["roomSize"]
         baths = request.form["baths"]
         price = request.form["price"]
         amenities = request.form["amenities"]
@@ -133,7 +135,9 @@ def createListing():
                 "city" : city,
                 "state" : state,
                 "zip" : zip,
+                "suite" : "N/A",
                 "beds" : beds,
+                "roomsize" : roomSize,
                 "baths" : baths,
                 "price" : price,
                 "amenities" : amenities,
@@ -142,6 +146,42 @@ def createListing():
             return redirect(url_for("homePage"))
 
     return render_template("listing_description.html")
+
+@app.route('/oncampus', methods =["GET", 'POST'])
+def onCampus():
+    if request.method == 'POST':
+        suite = request.form["suite"]
+        roomSize = request.form["roomSize"]
+        addInfo = request.form["addInfo"]
+        beds = request.form["beds"]
+        baths = request.form["baths"]
+        price = request.form["price"]
+    
+        if not suite: 
+            flash('Please select a suite!')
+        elif not roomSize:
+           flash('Please enter your room size!')
+        elif not beds:
+            flash('Please enter amount of bedrooms!')
+        elif not baths: 
+            flash('Please enter amount of bathrooms!')
+        elif not price:
+            flash('Please enter price!')
+        else:
+            listingDB.append({
+                "suite" : suite, 
+                'roomsize' : roomSize,
+                'beds' : beds,
+                'baths' : baths,
+                'price' : price,
+                'address' : "3801 West Temple Avenue",
+                "city" : 'Pomona',
+                "state" : 'CA',
+                "zip" : 91768,
+                "addInfo" : addInfo
+                })
+            return redirect(url_for('homePage'))
+    return render_template('on_campus.html')
 
 @app.route("/favorites", methods =("GET", "POST"))
 def favorites():

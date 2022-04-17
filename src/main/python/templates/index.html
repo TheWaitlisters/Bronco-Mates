@@ -15,6 +15,11 @@
                     <a href="{{ url_for('createListing') }}">Create Listing</a>
                 </div>
             </div>
+            <div class="col">
+                <div class="border border-dark border-3 bg-light">
+                    <a href="{{ url_for('onCampus') }}">Create On-campus Listing</a>
+                </div>
+            </div>
         </div>
 
         <div class="row w-25 bg-white border">
@@ -39,7 +44,7 @@
                 <span>{{ content["city"] }}, {{ content["state"] }} {{ content["zip"] }}</span>
                 <span style="float:right">{{ content["baths"]}} Baths</span>
                 <br>
-                <span style="float:right">${{ content["price"] }}</span>
+                <span style="float:left">${{ content["price"] }}</span>
             </div>
             {% endfor %}
         </div>
@@ -52,6 +57,8 @@
                 <p>City: {{ content["city"] }}</p>
                 <p>State: {{ content["state"] }}</p>
                 <p>ZIP Code: {{ content["zip"] }}</p>
+                <p>Suite: {{ content["suite"]}}</p>
+                <p>Room Size: {{ content["roomsize"]}}</p>
                 <p>Beds: {{ content["beds"] }}</p>
                 <p>Baths: {{ content["baths"] }}</p>
                 <p>Price: {{ content["price"] }}</p>
@@ -61,6 +68,8 @@
             </div>
             {% endfor %}
         </div>
+
+        
     </div>
 
 {% endblock %}

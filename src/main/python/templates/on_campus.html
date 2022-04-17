@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} Create a on Campus Listing {% endblock %}</h1>
+    <div class="container-fluid bg-light justify-content-center p-2 w-75">
+       <form method="post">
+              <h1>Required Information</h1>
+              
+              <div class="row">
+                     <div class="col-md-4">
+                            <label for="suite" class="form-label">suite</label>
+                            <select name="suite" class="form-select">
+                                   <option selected>Choose...</option>
+                                   <option value="Traditional Halls">Traditional Halls</option>
+                                   <option value="Vista de las Estrellas">Vista de las Estrellas</option>
+                                   <option value="Vista Bonita">Vista Bonita</option>
+                                   <option value="Vista del Sol">Vista del Sol</option>
+                                   <option value="Vista de las Montañas">Vista de las Montañas</option>
+                                   <option value="Vista de la Luna">Vista de la Luna</option>
+                            </select>
+                     </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                       <label for="beds" class="form-label"># of Beds</label>
+                       <input type="number" class="form-control" name="beds"
+                              placeholder="# of beds" value="{{ request.form['beds']}}">
+                </div>
+                <div class="col">
+                       <label for="Room size" class="form-label">roomSize</label>
+                       <input type="number" class="form-control" name="roomSize"
+                              placeholder="enter room Size" value="{{ request.form['roomSize']}}">
+                </div>
+                <div class="col">
+                       <label for="baths" class="form-label"># of Baths</label>       
+                       <input type="number" class="form-control" name="baths"
+                              placeholder="# of baths" value="{{ request.form['baths'] }}">
+                </div>
+                <div class="col">
+                       <label for="price" class="form-label">Price</label>   
+                       <input type="number" name="price" class="form-control"
+                              placeholder="Price" value="{{ request.form['price'] }}">
+                </div>
+              </div>
+              
+
+              <hr>
+       
+              <label for="addInfo" class="form-label">Additional Information</label>
+                     <textarea class="form-control" name="addInfo" placeholder="Additional information you want others to know!"
+                         rows="15">{{ request.form['addInfo'] }}</textarea>
+              <br>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+       </form>
+      </div>
+{% endblock %}

@@ -87,6 +87,11 @@
                                    placeholder="# of beds" value="{{ request.form['beds']}}">
                      </div>
                      <div class="col">
+                            <label for="Room size" class="form-label">Room size</label>
+                            <input type="number" class="form-control" name="roomSize"
+                                   placeholder="enter room Size" value="{{ request.form['roomSize']}}">
+                     </div>
+                     <div class="col">
                             <label for="baths" class="form-label"># of Baths</label>       
                             <input type="number" class="form-control" name="baths"
                                    placeholder="# of baths" value="{{ request.form['baths'] }}">

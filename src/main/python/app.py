@@ -29,7 +29,8 @@ loginInfo = [{'username' : 'testusername', 'password' : 'testpassword'}]
 
 @app.route("/")
 def homePage(): 
-    return render_template('index.html', listing =db.db.listing.find(), account = db.db.accountInfo.find())
+    
+    return render_template('index.html',listing = list(db.db.listing.find()), account = list(db.db.accountInfo.find()) )
 
 @app.route("/database")
 def test():

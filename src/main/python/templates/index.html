@@ -28,6 +28,9 @@
             <p><i>The place to find your newest roommates!</i></p>
         </div>
     </div>
+
+    
+
     
     <div class="row h-100">
         <div class="col-md-2 border-left border-dark" style="background-color:#e6f9ff">
@@ -45,6 +48,7 @@
         </div>
         
         <div class="col h-100 bg-light">
+            <p>this should display</p>
             {% for content in listing %}
             <div>
                 <p>Address: {{ content["address"] }}</p>
@@ -63,7 +67,7 @@
             </div>
             {% endfor %}
         </div>
-
+        
         
     </div>
 

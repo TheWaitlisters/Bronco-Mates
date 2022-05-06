@@ -155,6 +155,11 @@ def onCampus():
             return redirect(url_for('homePage'))
     return render_template('on_campus.html')
 
+@app.route('/listing')
+def listing():
+    print("this is the listing page")
+    return render_template('viewListing.html', listing = list(db.db.listing.find()), account = list(db.db.accountInfo.find()))
+
 
 if __name__ == "__main__":
     app.run(debug=True)

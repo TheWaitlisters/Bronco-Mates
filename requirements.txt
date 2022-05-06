@@ -1,4 +1,5 @@
 flask
 matplotlib
+pymongo==3.12.3
 Flask-PyMongo
 pytest

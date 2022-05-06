@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="border-bottom border-dark" style="background-image:url(https://www.dailynews.com/wp-content/uploads/migration/2015/201510/NEWS_151019644_AR_0_RWWJVODXOYUU.jpg);
+                background-size: 100% 200%">
+        
+        <div class="row w-25" style="float:right">
+            <div class="col">
+                <div class="border border-dark border-3 bg-light">
+                    <a href="{{ url_for('createListing') }}">Create Listing</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border border-dark border-3 bg-light">
+                    <a href="{{ url_for('onCampus') }}">Create On-campus Listing</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row w-25 bg-white border">
+            <div class="col">    
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Cal_Poly_Pomona_Broncos_logo.svg/800px-Cal_Poly_Pomona_Broncos_logo.svg.png" 
+                    alt="CPP Logo" style="width:200px; height:100px">
+            </div>
+            <div class="col">    
+                <h1><strong>Bronco Mates</strong></h1>
+            </div> 
+            <p><i>The place to find your newest roommates!</i></p>
+        </div>
+    </div>
+
+    <h1>View Listing</h1>
+    
+    <div class="col h-100 bg-light">
+        <p>this should display</p>
+        {% for content in listing %}
+        <div>
+            <p>Address: {{ content["address"] }}</p>
+            <p>Address2: {{ content["address2"] }}</p>
+            <p>City: {{ content["city"] }}</p>
+            <p>State: {{ content["state"] }}</p>
+            <p>ZIP Code: {{ content["zip"] }}</p>
+            <p>Suite: {{ content["suite"]}}</p>
+            <p>Room Size: {{ content["roomsize"]}}</p>
+            <p>Beds: {{ content["beds"] }}</p>
+            <p>Baths: {{ content["baths"] }}</p>
+            <p>Price: {{ content["price"] }}</p>
+            <p>Amenities: {{ content["amenities"] }}</p>
+            <p>Additional Information: {{ content["addInfo"] }}</p>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

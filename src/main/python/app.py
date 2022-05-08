@@ -24,6 +24,8 @@ listingDB = []
 
 #listing db 
 
+index = 0
+
 
 loginInfo = [{'username' : 'testusername', 'password' : 'testpassword'}]
 
@@ -157,7 +159,6 @@ def onCampus():
 
 @app.route('/listing')
 def listing():
-    print("this is the listing page")
     return render_template('viewListing.html', listing = list(db.db.listing.find()), account = list(db.db.accountInfo.find()))
 
 

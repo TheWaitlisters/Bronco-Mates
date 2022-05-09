@@ -32,29 +32,26 @@
     
 
     
-    <div class="row h-100">
+    <div class="col h-100">
+        {% for content in listing %}
+        <div class="row border-bottom">
         <div class="col-md-2 border-left border-dark" style="background-color:#e6f9ff">
-            {% for content in listing %}
-            <div class="pb-5 p-2 border-bottom">
-                <span>{{ content["address"] }} {{ content["address2"] }}</span>
-                <span style="float:right">{{ content["beds"] }} Beds</span>
-                <br>
-                <span>{{ content["city"] }}, {{ content["state"] }} {{ content["zip"] }}</span>
-                <span style="float:right">{{ content["baths"]}} Baths</span>
-                <br>
-                <span style="float:left">${{ content["price"] }}</span>
-                <br>
-                <a href="{{ url_for('listing') }}"> About me! </a> 
+           
+            <div class="pb-5 p-2">
+                <p>Name: {{content["name"] }}</p>
+                <p>Age: {{content["age"] }}</p>
+                <p>Gender: {{content["gender"] }}</p>
+                <p>Standing: {{content["standing"] }}</p>
+                <p>Major: {{content["major"] }}</p>
+                <p>Minor: {{content["minor"] }}</p>
+                <p>Smoker: {{content["smoker"]}}</p>
+                <p>Bio: {{content["bio"]}}</p>
             </div>
-            {% endfor %}
         </div>
-        
         <div class="col h-100 bg-light">
-            <p>this should display</p>
-            {% for content in listing %}
             <div>
                 <p>Address: {{ content["address"] }}</p>
-                <p>Address2: {{ content["address2"] }}</p>
+                <p>         {{ content["address2"] }}</p>
                 <p>City: {{ content["city"] }}</p>
                 <p>State: {{ content["state"] }}</p>
                 <p>ZIP Code: {{ content["zip"] }}</p>
@@ -65,12 +62,12 @@
                 <p>Price: {{ content["price"] }}</p>
                 <p>Amenities: {{ content["amenities"] }}</p>
                 <p>Additional Information: {{ content["addInfo"] }}</p>
-                <hr>
             </div>
-            {% endfor %}
+           
         </div>
-        
-        
+      
+        </div>
+        {% endfor %}
     </div>
 
 {% endblock %}

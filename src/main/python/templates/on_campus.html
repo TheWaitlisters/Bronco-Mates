@@ -51,7 +51,68 @@
                          rows="15">{{ request.form['addInfo'] }}</textarea>
               <br>
 
-              
+               <!--ABOUT ME SECTION-->
+               <hr>
+               <h1>Say about yourself!</h1>
+               <p><i>Just know this part is optional and will be public!</i></p>
+ 
+               <div class="mb-3">
+                      <h2>General Information</h2>
+                      <div class="row">
+                            <div class="col">
+                                  <label for="Name" class="form-label">Name</label>
+                                  <input type="text" class="form-control" name="name" placeholder="Name" value="{{ request.form['name'] }}">
+                            </div>
+                      </div>
+          
+                      <div class="row">
+                            <div class="col">
+                                  <label for="age" class="form-label">Age</label>
+                                  <input type="number" class="form-control" name="age" placeholder="Age" value="{{ request.form['age'] }}">
+                            </div>
+                            <div class="col">
+                                  <label for="gender" class="form-label">Gender</label>
+                                  <select class="form-select" aria-label="Default Select" name="gender" value="{{ request.form['gender']}}">
+                                        <option selected>Prefer not to disclose</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Non-Binary">Non-Binary</option>
+                                        <option value="Other">Other</option>
+                                  </select>
+                                  </div>
+                            </div>
+                      <hr>
+                      <h2>Academics</h2>
+                      <div class="row">
+                            <div class="col">
+                                  <label for="major" class="form-label">Major</label>
+                                  <input type="text" class="form-control" name="major" placeholder="Major" value="{{ request.form['major'] }}">
+                            </div>
+                            <div class="col">
+                                  <label for="minor" class="form-label">Minor</label>
+                                  <input type="text" class="form-control" name="minor" placeholder="Minor" value="{{ request.form['minor'] }}">
+                            </div>
+                      </div>
+          
+                      <label for="standing" class="form-check-label" name="standing">College Standing</label>
+                      <div class="form-check bg-white border mb-3">
+                            <input type="hidden" name="standing" value="Prefer not to disclose">
+                            <input class="form-check-input" type="radio" id="default" name="standing" checked value="Perfer not to disclose">
+                            <label class="form-check-label" for="default">Prefer not to disclose</label> <br>
+                            <input class="form-check-input" type="radio" id="freshman" name="standing" value="Freshman">
+                            <label class="form-check-label" for="freshman">Freshman</label> <br>
+                            <input class="form-check-input" type="radio" id="sophomore" name="standing" value="Sophomore">
+                            <label class="form-check-label" for="sophomore">Sophomore</label> <br>
+                            <input class="form-check-input" type="radio" id="junior" name="standing" value="Junior">
+                            <label class="form-check-label" for="junior">Junior</label> <br>
+                            <input class="form-check-input" type="radio" id="senior" name="standing" value="Senior">
+                            <label class="form-check-label" for="senior">Senior</label> <br>
+                            <input class="form-check-input" type="radio" id="grad" name="standing" value="Grad">
+                            <label class="form-check-label" for="grad">Graduate Student</label> <br>
+                            <input class="form-check-input" type="radio" id="other" name="standing" value="Other">
+                            <label class="form-check-label" for="other">Other</label>
+                      </div>
+                      <hr>
               <h2>Personal Information</h2>
               <div class="row">
                     <div class="col">

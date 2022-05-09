@@ -63,6 +63,7 @@ def createListing():
         addInfo = request.form["addInfo"]
 
         # INFORMATION ABOUT SELF
+        name = request.form["name"]
         age = request.form["age"]
         gender = request.form["gender"]
         standing = request.form["standing"]
@@ -106,8 +107,11 @@ def createListing():
                 flash("One contact method must be provided")
         else:
             db.db.listing.insert_one({'address' : address, 'address2' : address2, 'city' : city, 'state': state, 
-            'zip' : zip, 'deleteKey' : deleteKey, 'beds' : beds, 'roomSize' : roomSize, 'baths': baths, 'price': price, 'pets' : pets, 
-            'phoneNumber' : phoneNumber, 'email' : email, 'amenities': amenities, 'addInfo' : addInfo})
+                'zip' : zip, 'deleteKey' : deleteKey, 'beds' : beds, 'roomsize' : roomSize, 'baths': baths, 'price': price, 'pets' : pets, 
+                'phoneNumber' : phoneNumber, 'email' : email, 'amenities': amenities, 'addInfo' : addInfo, 'name' : name, "age" : age, 
+                "gender" : gender, "standing" : standing, "major" : major, "minor" : minor,
+                "smoker" : smoker, "pets" : pets, "budget" : budget, "children" : children, "ocupation" : ocupation, 
+                "workSchedule" : workSchedule, "moveDate" : moveDate, "socials" : socials, "bio" : bio})
 
             db.db.accountInfo.insert_one({"age" : age, "gender" : gender, "standing" : standing, "major" : major, "minor" : minor,
                 "smoker" : smoker, "pets" : pets, "budget" : budget, "children" : children, "ocupation" : ocupation, 
@@ -140,6 +144,30 @@ def onCampus():
         beds = request.form["beds"]
         baths = request.form["baths"]
         price = request.form["price"]
+
+         # INFORMATION ABOUT SELF
+        name = request.form["name"]
+        age = request.form["age"]
+        gender = request.form["gender"]
+        standing = request.form["standing"]
+        major = request.form["major"]
+        minor = request.form["minor"]
+        smoker = request.form["smoker"]
+        pets = request.form["pets"]
+        budget = request.form["budget"]
+        children = request.form["children"]
+        ocupation = request.form["ocupation"]
+        socials = { "facebook" : request.form["facebook"], "instagram" : request.form["instagram"], "snapchat" : request.form["snapchat"],
+                    "twitter" : request.form["twitter"]}
+        workSchedule = { "Monday" : (request.form["mSchedule1"], request.form["mSchedule2"]),
+                        "Tuesday" : (request.form["tSchedule1"], request.form["tSchedule2"]),
+                        "Wednesday" : (request.form["wSchedule1"], request.form["wSchedule2"]),
+                        "Thursday" : (request.form["thSchedule1"], request.form["thSchedule2"]),
+                        "Friday" : (request.form["fSchedule1"], request.form["fSchedule2"]),
+                        "Saturday" : (request.form["satSchedule1"], request.form["satSchedule2"]),
+                        "Sunday" : (request.form["sunSchedule1"], request.form["sunSchedule2"]) }
+        moveDate = request.form["moveDate"]
+        bio = request.form["bio"]
     
         if not suite: 
             flash('Please select a suite!')
@@ -152,8 +180,11 @@ def onCampus():
         elif not price:
             flash('Please enter price!')
         else:
-            db.db.listing.insert_one({"suite": suite, "roomsize" : roomSize, "beds" : beds, "price" : price, 
-            "address" : "3801 West Temple Avenue", "city" : "Pomona", "state" : "Ca", "zip" : "91768", "addInfo" : addInfo})
+            db.db.listing.insert_one({"suite": suite, "roomsize" : roomSize, "beds" : beds, "baths" : baths, "price" : price, 
+            "address" : "3801 West Temple Avenue", "city" : "Pomona", "state" : "Ca", "zip" : "91768", "addInfo" : addInfo,'name' : name, "age" : age, 
+                "gender" : gender, "standing" : standing, "major" : major, "minor" : minor,
+                "smoker" : smoker, "pets" : pets, "budget" : budget, "children" : children, "ocupation" : ocupation, 
+                "workSchedule" : workSchedule, "moveDate" : moveDate, "socials" : socials, "bio" : bio})
             return redirect(url_for('homePage'))
     return render_template('on_campus.html')
 

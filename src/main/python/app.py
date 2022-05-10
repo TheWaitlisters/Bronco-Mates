@@ -141,9 +141,12 @@ def onCampus():
         suite = request.form["suite"]
         roomSize = request.form["roomSize"]
         addInfo = request.form["addInfo"]
+        amenities = request.form["amenities"]
         beds = request.form["beds"]
         baths = request.form["baths"]
         price = request.form["price"]
+        phoneNumber = request.form["phoneNumber"]
+        email = request.form["email"]
 
          # INFORMATION ABOUT SELF
         name = request.form["name"]
@@ -180,8 +183,9 @@ def onCampus():
         elif not price:
             flash('Please enter price!')
         else:
-            db.db.listing.insert_one({"suite": suite, "roomsize" : roomSize, "beds" : beds, "baths" : baths, "price" : price, 
-            "address" : "3801 West Temple Avenue", "city" : "Pomona", "state" : "Ca", "zip" : "91768", "addInfo" : addInfo,'name' : name, "age" : age, 
+            db.db.listing.insert_one({"address2": suite, "roomsize" : roomSize, "beds" : beds, "baths" : baths, "price" : price, 
+            "address" : "3801 West Temple Avenue", "city" : "Pomona", "state" : "Ca", "zip" : "91768", "addInfo" : addInfo, "phoneNumber" : phoneNumber,
+                'name' : name, "age" : age, 'email' : email, 'amenities': amenities,
                 "gender" : gender, "standing" : standing, "major" : major, "minor" : minor,
                 "smoker" : smoker, "pets" : pets, "budget" : budget, "children" : children, "ocupation" : ocupation, 
                 "workSchedule" : workSchedule, "moveDate" : moveDate, "socials" : socials, "bio" : bio})

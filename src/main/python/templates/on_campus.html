@@ -51,6 +51,25 @@
                          rows="15">{{ request.form['addInfo'] }}</textarea>
               <br>
 
+              <h3>Contact Information</h3>
+              <label for="phoneNumber" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" name="phoneNumber" placeholder="123-456-7890" value="{{ request.form['phoneNumber'] }}"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+  
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" name="email" placeholder="Email" value="{{ request.form['email'] }}">
+
+              <hr>
+              <label for="amenities" class="form-label">Amenities</label>
+              <textarea class="form-control" name="amenities" placeholder="What are some amenities offered?"
+                  rows="15">{{ request.form['bio'] }}</textarea>
+              <hr>
+       
+              <label for="addInfo" class="form-label">Additional Information</label>
+                     <textarea class="form-control" name="addInfo" placeholder="Additional information you want others to know!"
+                         rows="15">{{ request.form['addInfo'] }}</textarea>
+              <br>
+
                <!--ABOUT ME SECTION-->
                <hr>
                <h1>Say about yourself!</h1>
